@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+.notice-type-div{
+    height: 30px;
+    clear: both;
+}
+
+.table-module tr td{
+    text-align: center;
+}
+.table-module tr td.opt-td{
+    width: 50px;
+}
+.table-module tr td.send-user-name{
+    width: 200px;
+}
+.table-module tr td.code{
+    width: 200px;
+}
+.table-module tr td.msg-subject{
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.table-module tr td.create-time{
+    width: 200px;
+}
+.table-module tr td.align-left{
+    text-align: left;
+}
+
+.table-module tr td .read{
+    width: 18px;
+    height: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    float: left;
+    background: url('/images/msg/mail2757b6.png') -48px -16px no-repeat;
+}
+.table-module tr td .unread{
+    width: 18px;
+    height: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    float: left;
+    background: url('/images/msg/mail2757b6.png') -48px 0 no-repeat;
+}
+
+.table-module tr td .start{
+    width: 14px;
+    height: 14px;
+    background: url('/images/msg/mail2757b6.png') -48px -176px no-repeat;
+    float: left;
+    margin-left: 20px;
+    display: block;
+    cursor: pointer;
+}
+.table-module tr td .unstart{
+    width: 14px;
+    height: 14px;
+    background: url('/images/msg/mail2757b6.png') no-repeat -32px -160px;
+    float: left;
+    margin-left: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+#btn-module{
+    margin: 10px 0;
+}
+
+.count-info {
+    float: right;
+    margin: 7px;
+    padding-top: 5px;
+    color: #001b55;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.count-text {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.unread-text {
+    color: #5fa207;
+}
+
+.unread-text:hover {
+    color: #5fa207;
+    text-decoration: none;
+}
+
+.searchFilterText {
+    width: 100px; 
+}
+
+.read-status-div {
+    height: 30px;
+}
+
+.windows-inform {
+    float: right;
+    margin-top: -98px;
+    margin-right: 30px;
+    padding: 12px 5px 0 8px;
+    height: 32px;
+    width: 105px;
+    border: solid 1px #999;
+    cursor: pointer;
+}
+
+.inform-title {
+    float: left;
+    padding: 0 5px;
+}
+
+.inform-text {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ok {
+    background: url('/images/msg/informok.png');
+}
+
+.remove {
+    background: url('/images/msg/informremove.png');
+}
+
+.set-windows-information {
+    display: none;
+}
+
+.select-inform-type a {
+    text-decoration: none;
+}
+
+.select-inform-type {
+    margin-top: 10px;
+}
+
+.inform-type {
+    padding: 8px 0 8px 22px;
+}

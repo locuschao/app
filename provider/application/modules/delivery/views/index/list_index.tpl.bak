@@ -1,0 +1,978 @@
+<link type="text/css" rel="stylesheet" href="/css/delivery/list_index.css?20170518">
+<script type="text/javascript" src="/js/ToolTip.js" xmlns="http://www.w3.org/1999/html"></script>
+<script type="text/javascript" src="/js/ajaxfileupload.js"></script>
+<script src="/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    EZ.url = '/delivery/Index/';
+    EZ.getListData = function (json) {
+        var html = '';
+        $('.checkAll').attr('checked',false);
+        var i = paginationCurrentPage < 1 ? 1 : paginationPageSize * (paginationCurrentPage - 1) + 1;
+        $.each(json.data, function (key, val) {
+            html += (key + 1) % 2 == 1 ? "<tr class='table-module-b1'>" : "<tr class='table-module-b2'>";
+            html +="<input type='hidden' class='uteId' value='"+val.E12+"'>";
+            html +=" <td class='ec-center'><input type='checkbox' class='checkItem' name='orderId[]'  ref_id='"+val.E0+"' value='"+val.E0+"'></td>";
+            html += "<td class='ec-center'>" + (i++) + "</td>";
+            html +="<td>"+val.E2+"</td>";
+            html +=" <td>"+val.E3+"</td>";
+            html +=" <td>"+(val.E4).replace(/(\d{4}).(\d{1,2}).(\d{1,2}).+/mg, '$1-$2-$3')+"</td>";
+            html +=" <td>"+(val.E5).replace(/(\d{4}).(\d{1,2}).(\d{1,2}).+/mg, '$1-$2-$3')+"</td>";
+            html +=" <td>"+val.E7+"</td>";
+            html +=" <td>"+val.E6+"</td>";
+            html +=" <td>"+val.E8+"</td>";
+            switch(val.E9) {
+                        case '1':
+                            html += '<td>待处理</td>';
+                            break;
+                        case '2':
+                            html += '<td>待审核</td>';
+                            break;
+                        case '3':
+                            html += '<td>已确认</td>';
+                            break;
+                        case '4':
+                            html += '<td>已发货</td>';
+                            break;
+                        case '5':
+                            html += '<td>审核失败</td>';
+                            break;
+                        default :
+                            html += '<td></td>';
+                            break;
+                    }
+            html += "<td><a href='javascript:;' onclick=\"showDeliveryDetail("+val.E0+")\" > 查看详情  </a></td>";
+            html += "</tr>";
+        });
+
+        return html;
+    }
+    //日期选择
+    $(function(){
+        var dayNamesMin = ['日', '一', '二', '三', '四', '五', '六'];
+        var monthNamesShort = ['01月', '02月', '03月', '04月', '05月', '06月', '07月', '08月', '09月', '10月', '11月', '12月'];
+        $.timepicker.regional['ru'] = {
+            timeText : '选择时间',
+            hourText : '小时',
+            minuteText : '分钟',
+            secondText : '秒',
+            millisecText : '毫秒',
+            currentText : '当前时间',
+            closeText : '确定',
+            ampm : false
+        };
+        $.timepicker.setDefaults($.timepicker.regional['ru']);
+        $('.dateFrom,.dateEnd,.date').datetimepicker({
+            dayNamesMin : dayNamesMin,
+            monthNamesShort : monthNamesShort,
+            changeMonth : true,
+            changeYear : true,
+            dateFormat : 'yy-mm-dd'
+        });
+
+        $(".checkAll").live('click', function() {
+            $(".checkItem").attr('checked', $(this).is(':checked'));
+        });
+    });
+    //批量插入发货单
+    $(function(){
+        $("#upload-dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 580,
+            height: 350,
+            show: "slide",
+            buttons: {
+
+                'Cancel(取消)': function () {
+                    $(this).dialog('close');
+                }
+            },
+            close: function () {
+                $(this).dialog('close');
+            }
+        });
+    });
+
+    function more_add_delivery(){
+
+        $("#upload-dialog").dialog('open');
+            
+    }
+
+   function ajaxFileUpload() {
+        if ($("#fileToUpload").val() == '') {
+            alertTip('<span class="tip-error-message"><{t}>please_select_a_file<{/t}></span>');
+            return false;
+        }
+        var load_tips = "<span class='tip-load-message'>数据上传中，请等待...</span>"; 
+        alertTip(load_tips);
+       var a =$('#ute_id option:selected').val();
+
+
+        $.ajaxFileUpload
+        (
+                {
+                    url: $('#upload_form').attr('action'),
+                    secureuri: false,
+                    fileElementId: 'fileToUpload',
+                    dataType: 'json',
+                    data:{id:a},
+                    success: function (json) {
+
+                        var html = "";
+                        if(json.state=='1'){
+                            $.each(json.message, function (k, v) {
+                                html += v + '<br/>';
+                            });
+                            $('#dialog-auto-alert-tip p').html(html);
+                            $(".submitToSearch").click();
+                            $("#fileToUpload").val('');
+                            $("#upload-dialog").dialog('close');
+
+                        }else{
+                            $.each(json.message, function (k, v) {
+                                html += v ;
+                            });
+
+                            $('#dialog-auto-alert-tip p').html(html);
+                        }
+                    },
+                    error: function (data, status, e) {
+
+                    }
+                }
+        );
+        return false;
+    }
+    // 弹框查看发货单详情
+    $(function(){
+        $("#dialogDeliveryDetail").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 1380,
+            height: 350,
+            show: "slide",
+            title:'查看发货单详情',
+            buttons: {
+
+                'Cancel(取消)': function () {
+                    $(this).dialog('close');
+                }
+            },
+            close: function () {
+                $(this).dialog('close');
+            }
+        });
+    });
+    // 查看发货单详情列表数据
+    function showDeliveryDetail(id){
+        $("#dialogDeliveryDetail").dialog('open');
+        $.ajax({
+            type:'POST',
+            url:'/delivery/index/get-delivery-detail',
+            dataType:'json',
+            data: {'id':id},
+            async:false,
+            success:function(json){
+                var html='';
+                var datas ='';
+                 if(json.state==1) {
+                     html += "<table width='120%' id='tables' border='0' cellpadding='0' cellspacing='0'>";
+                     html += "<tr height='35'>";
+                     html += " <td>销售单号&nbsp;:&nbsp;<span>" + json.data.do_no + "</span></td>";
+
+                     html += " <td>结算方式&nbsp;:&nbsp;<span>货到付款</span></td>";
+                     html += " <td>发货单号&nbsp;:&nbsp;<span>" + json.data.do_ship_no + "</span></td>";
+                     html += "</tr>";
+                     html += "<tr height='35'>";
+                     html += " <td>运输方式&nbsp;:&nbsp;<span>物流</span></td>";
+                     html += " <td>运输费用(￥)&nbsp;:&nbsp;<span>" + json.data.do_ship_fee + "</span></td>";
+                     html += " <td>承运&nbsp;:&nbsp;<span>" + json.data.do_ship_company + "</span></td>";
+                     html += "</tr>";
+                     html += "</table>";
+                 $.each(json.data.deliveryOrderItemData, function (key, val) {
+                     datas += (key + 1) % 2 == 1 ? "<tr class='table-module-b2'>" : "<tr class='table-module-b1'>";
+                     datas += "<td>" + val.doi_sku + "</td>";
+                     datas += "<td>" + val.doi_name + "</td>";
+                     datas += "<td>" + val.doi_amount +  val.doi_unit +"</td>";
+                     datas += "<td>" + val.doi_size + "</td>";
+                     datas += "<td>" + val.doi_weight + "</td>";
+                     datas += "<td>" + val.doi_total_box + "</td>";
+                     datas += "<td>" + val.doi_box_gw + val.doi_box_gw_unit +"</td>";
+                     datas += "<td>" + val.doi_box_total_gw + val.doi_box_total_gw_unit + "</td>";
+                     datas += "<td>" + val.doi_box_nw + val.doi_box_nw_unit +"</td>";
+                     datas += "<td>" + val.doi_box_total_nw + val.doi_box_total_nw_unit +"</td>";
+                     datas += "<td>" + val.doi_total_cube + "</td>";
+                     datas += "<td>" + val.doi_box_size + "</td>";
+                     datas += "<td>" + val.doi_box_no + "</td>";
+                     datas += "<td>" + json.data.do_ship_time.replace(/(\d{4}).(\d{1,2}).(\d{1,2}).+/mg, '$1-$2-$3') + "</td>";
+                   datas += "<td>已确认</td>";
+                     datas += "</tr>";
+                  });
+                     $("#delviry").html(html);
+                     $("#deliveryData").html(datas);
+                 }
+            }
+        });
+    }
+
+    //选择查询单号搜索类型
+    $(function(){
+        $("#order_types").on('change',function(){
+          var values = this.value;
+            if(values != null){
+                $("#order_type").attr('name',values);
+            }
+        });
+   })
+    $(function(){
+        $("#module-pack").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 1380,
+            height: 350,
+            show: "slide",
+            buttons: {
+
+                'Cancel(取消)': function () {
+                    $(this).dialog('close');
+                    //重新生成隐藏域
+                    $('.do').remove();
+                    $("#service_code").children().remove();
+                }
+            },
+            close: function () {
+                $(this).dialog('close');
+                //重新生成隐藏域
+                $('.do').remove();
+                $("#service_code").children().remove();
+            }
+        });
+    });
+
+   function make_delivery_Packing_list(){
+       var string='';
+       $(".checkItem:checked").each(function() {
+           string += $(this).val()+",";
+       });
+       string=string.substring(0,string.length-1);
+       if($(".checkItem:checked").size()>0){
+               $.ajax({
+                   url: '/delivery/index/get-warehouse',
+                   type: 'post',
+                   data: {
+                       id:string,
+                      },
+                   dataType: 'json',
+                   success: function(data) {
+                       if(false===data['data']){
+                           alertConfirmTip('该商品的供应商token不正确',function(){
+                           });
+                       }else if(data['state']==2){
+                           alertConfirmTip("<font color='#FF0000'>**</font>所选商品的供应商不一致,请重新选择",function(){
+                           });
+                       }else {
+                           var E0 = data['do_id'];
+                           var E12 = data['ute_id'];
+                           $('#formdata').append("<input type='hidden' class='do' name='do_id' value=" + E0 + ">" + "<input type='hidden' class='do' name='ute_id' value=" + E12 + ">");
+                           div = "<option value=''>全部</option>";
+                           $.each(data['data'], function (key, val) {
+                               div += "<option  value=" + val['serviceCode'] + ">" + val['serviceName'] + "</option>";
+                           });
+                           $("#service_code").append(div);
+                           $("#module-pack").dialog('open');
+                       }
+                   },
+                   error: function(data) {
+
+                   }
+               })
+       }else{
+           alertConfirmTip('请先选择要生成的装箱单的发货信息',function(){
+           });
+       }
+
+    }
+
+    $(function(){
+        $("#warehouse-module").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 500,
+            height: 580,
+            show: "slide",
+            buttons: {
+
+                'Cancel(取消)': function () {
+                    $(this).dialog('close');
+                    //重新生成隐藏域
+                    $(this).children('.submitReturnFalse').remove();
+                }
+            },
+            close: function () {
+                $(this).dialog('close');
+                //重新生成隐藏域
+                $(this).children('.submitReturnFalse').remove();
+            }
+        });
+    });
+   //提货时间为上门，时间必填
+   function  shang() {
+       var val=$('#packageTypeArr').val();
+      if(val.toUpperCase()=="P"){
+          $("#addtime").append("<span class='addtime' style='font-weight:bolder;font-size:15px;padding-left:30px;'>提货时间：<input type='text' name='reservePickupDate' onclick='addtime()' class='input_text datepicker dateFrom '></span>");
+      }else{
+          $(".addtime").remove();
+      }
+   }
+   //添加时间插件
+    function addtime() {
+        //日期选择
+        $(function(){
+            var dayNamesMin = ['日', '一', '二', '三', '四', '五', '六'];
+            var monthNamesShort = ['01月', '02月', '03月', '04月', '05月', '06月', '07月', '08月', '09月', '10月', '11月', '12月'];
+            $.timepicker.regional['ru'] = {
+                timeText : '选择时间',
+                hourText : '小时',
+                minuteText : '分钟',
+                secondText : '秒',
+                millisecText : '毫秒',
+                currentText : '当前时间',
+                closeText : '确定',
+                ampm : false
+            };
+            $.timepicker.setDefaults($.timepicker.regional['ru']);
+            $('.dateFrom,.dateEnd,.date').datetimepicker({
+                dayNamesMin : dayNamesMin,
+                monthNamesShort : monthNamesShort,
+                changeMonth : true,
+                changeYear : true,
+                dateFormat : 'yy-mm-dd'
+            });
+
+            $(".checkAll").live('click', function() {
+                $(".checkItem").attr('checked', $(this).is(':checked'));
+            });
+        });
+    }
+   //3级联动
+   function sheng(){
+       var serviceCode=$("#pan").val();
+       var shengId=$('#regionIdLevel0').val();
+       var ute_id=$("#uteId").val();
+       $.ajax({
+           url:'/delivery/index/sheng',
+           type:'post',
+           data:{"ute_id":ute_id,"shengId":shengId,'serviceCode':serviceCode},
+           dataType:'json',
+           success:function(data){
+               $('#regionIdLevel1').children().remove();
+               $('#regionIdLevel2').children().remove();
+               div="<option value=''>全部</option>";
+               $.each(data,function(key,value){
+                   div += "<option  value=" + value['sc_region_id'] + ">" + value['sc_region_name'] + "</option>";
+               });
+               $('#regionIdLevel1').append(div);
+           }
+       });
+   }
+
+    function shiqu(){
+        var serviceCode=$("#pan").val();
+        var shengId=$('#regionIdLevel1').val();
+        var ute_id=$("#uteId").val();
+        $.ajax({
+            url:'/delivery/index/shiqu',
+            type:'post',
+            data:{"ute_id":ute_id,"shengId":shengId,'serviceCode':serviceCode},
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+                $('#regionIdLevel2').children().remove();
+                div="<option value=''>全部</option>";
+                $.each(data,function(key,value){
+                    div += "<option  value=" + value['sc_region_id'] + ">" + value['sc_region_name'] + "</option>";
+                });
+                $('#regionIdLevel2').append(div);
+            }
+        });
+    }
+
+    function make_pack() {
+        var data = $("#formdata").serialize();
+        var service = data.split('&');
+        $.ajax({
+            url: '/delivery/index/get-warehouse-detail',
+            type: 'post',
+            data: {
+                service: service,
+            },
+            dataType: 'json',
+            success: function (data) {
+                if(data['refCode']==null && data['serviceCode']=='4PX'){
+                    var div="<form method='post' enctype='multipart/form-data' action='/delivery/index/package-detail' id='formdata2'class='submitReturnFalse'>";
+                        div+="<div class='search-module-condition'>";
+                        div+="<span class='search'>海外仓服务商：</span><input type='text' readonly='true' name='serviceName' value="+data['serviceName']+"><input type='hidden'  name='do_id' value="+data['do_id']+">"+"<input type='hidden' name='ute_id' value="+data['ute_id']+">"+"<input type='hidden' name='serviceCode' value="+data['serviceCode']+">";
+                        div+="<div class='search-module-condition'>";
+                        div+="<input type='hidden' name='toWarehouseId' value="+data['toWarehouseId']+">";
+                    div+="<span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;海外仓库：</span>";
+                    div+="<select class='selectCss input_text2' name='ServiceWarehouse' id='ServiceWarehouse' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    $.each(data['ServiceWarehouse'],function (key,value) {
+                        div+="<option  value='"+value['warehoueId']+"'>"+value['warehouseDesc']+"</option>";
+                    });
+                        div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运输方式：</span>";
+                    div+="<select class='selectCss input_text2' name='smCode' id='smCode' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    if(data['smCode']) {
+                        $.each(data['smCode'], function (key, value) {
+                            div += "<option  value=" + value['smCode'] + ">" + value['smNameCn'] + "</option>";
+                        });
+                    }
+                    div+="</select>";
+                        div+="</div>";
+                    div+="<div class='search-module-condition'>";
+                    div+="<span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;包装类型：</span>";
+                    div+="<select class='selectCss input_text2' name='packageTypeArr' id='packageTypeArr' style='width: 120px;'>";
+                    $.each(data['WarehouseInfo']['packageTypeArr'],function (key,value) {
+                        div+="<option  value='"+key+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'><font color='#f00'>(如果包装类型为非自带包装此时不能选择letter)</font></span>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;货物类型：</span>";
+                    div+="<select class='selectCss input_text2' name='goodsTypeArr' id='goodsTypeArr' style='width: 120px;'>";
+                    $.each(data['WarehouseInfo']['goodsTypeArr'],function (key,value) {
+                        div+="<option  value='"+key+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;派送方式：</span>";
+                    div+="<select class='selectCss input_text2' name='carrierCodeArr' id='carrierCodeArr' style='width: 200px;'>";
+                    div+="<option value=''>请选择</option>";
+                    $.each(data['WarehouseInfo']['carrierCodeArr'],function (key,value) {
+                        div+="<option  value='"+key+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报关类型：</span>";
+                    div+="<select class='selectCss input_text2' name='customsTypeArr' id='customsTypeArr' style='width: 120px;'>";
+                    div+="<option value=''>请选择</option>";
+                    $.each(data['WarehouseInfo']['customsTypeArr'],function (key,value) {
+                        div+="<option  value='"+key+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'><font color='#f00'>如果报关类型含有vat，此时下面三项必填</font></span>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司名称：</span>";
+                    div+="<input type='text' name='vatName' value=''>";
+                    div+="<br/><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VAT号码：</span>";
+                    div+="<input type='text' name='vatCode' value=''>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EORI号码：</span>";
+                    div+="<input type='text' name='eoriCode' value=''>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关税类型：</span>";
+                    div+="<select class='selectCss input_text2' name='dutypayType' id='dutypayType' style='width: 120px;'>";
+                    div+="<option value=''>请选择</option>";
+                    div+="<option  value='p'>实报实销</option>";
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保险类型：</span>";
+                    div+="<select class='selectCss input_text2' name='insureType' id='insureType' style='width: 120px;'>";
+                    div+="<option value=''>请选择</option>";
+                    div+="<option  value='LI'>低保</option>";
+                    div+="<option  value='HI'>高保</option>";
+                    div+="</select>";
+                    div+="</div>";
+                    div+="<div class='search-module-condition'><span class='search' style='margin-left: 78px;'></span><input type='submit' value='装箱单数据确认'  class='baseBtn'> </div>";
+                    div+="</form>";
+                        $('#warehouse-module').append(div);
+                    $("#module-pack").dialog('close');
+                    $("#warehouse-module").dialog('open');
+                }else if(data['refCode']==null && data['serviceCode']=='WINIT'){
+                    var div="<form method='post' enctype='multipart/form-data' action='/delivery/index/package-detail' id='formdata2'class='submitReturnFalse'>";
+                    div+="<div class='search-module-condition'>";
+                    div+="<span class='search'>海外仓服务商：<input type='text' readonly='true' name='serviceName' value="+data['serviceName']+"><input type='hidden'  name='do_id' value="+data['do_id']+">"+"<input type='hidden' name='ute_id' value="+data['ute_id']+">"+"<input type='hidden' name='serviceCode' value="+data['serviceCode']+"></span>";
+                    div+="<input type='hidden' name='toWarehouseId' value="+data['toWarehouseId']+">";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;海外仓库：</span>";
+                    div+="<select class='selectCss input_text2' name='ServiceWarehouse' id='ServiceWarehouse' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    $.each(data['ServiceWarehouse'],function (key,value) {
+                        div+="<option  value='"+value['warehoueId']+"'>"+value['warehouseDesc']+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运输方式：</span>";
+                    div+="<select class='selectCss input_text2' name='smCode' id='smCode' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    if(data['smCode']) {
+                        $.each(data['smCode'], function (key, value) {
+                            div += "<option  value=" + value['smCode'] + ">" + value['smNameCn'] + "</option>";
+                        });
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提货类型：</span>";
+                    div+="<select class='selectCss input_text2' name='packageTypeArr' id='packageTypeArr' onchange='shang()' style='width: 120px;'>";
+                    div+="<option value=''>请选择</option>";
+                    div+="<option  value='P'>WINIT上门提货</option>";
+                    div+="<option  value='s'>自发物流</option>";
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验货方式：</span>";
+                    div+="<select class='selectCss input_text2' name='inspectionTypeArr' id='inspectionTypeArr' style='width: 120px;'>";
+                    div+="<option value=''>请选择</option>";
+                    div+="<option  value='VI'>上门验货 </option>";
+                    div+="<option  value='WI'>验货仓验货 </option>";
+                    div+="</select>";
+                    div+="<br><span class='search'>WINIT提货开始时间段：</span>";
+                    div+="<select class='selectCss input_text2' name='reservePickupTimeArr' id='reservePickupTimeArr' style='width: 200px;'>";
+                    div+="<option value=''>请选择</option>";
+                    $.each(data['WarehouseInfo']['reservePickupTimeArr'],function (key,value) {
+                        div+="<option  value='"+key+"'>"+value['bagin']+"--"+value['end']+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>winit产品(标准海外仓入库)：</span>";
+                    div+="<select class='selectCss input_text2' name='winitProductCodeArr' id='winitProductCodeArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['winitProductCodeArr']){
+                    $.each(data['WarehouseInfo']['winitProductCodeArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进口商：</span>";
+                    div+="<select class='selectCss input_text2' name='winitImporterVendorAr' id='winitImporterVendorAr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['winitImporterVendorAr']){
+                    $.each(data['WarehouseInfo']['winitImporterVendorAr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出口商：</span>";
+                    div+="<select class='selectCss input_text2' name='winitExporterVendorArr' id='winitExporterVendorArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['winitExporterVendorArr']){
+                    $.each(data['WarehouseInfo']['winitExporterVendorArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提货地址：</span>";
+                    div+="<select class='selectCss input_text2' name='pickupAddressArr' id='pickupAddressArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['pickupAddressArr']){
+                    $.each(data['WarehouseInfo']['pickupAddressArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发货供应商：</span>";
+                    div+="<select class='selectCss input_text2' name='expressVendorArr' id='expressVendorArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['expressVendorArr']){
+                    $.each(data['WarehouseInfo']['expressVendorArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<div class='search-module-condition' id='addtime'>";
+                    div+="</div>";
+                    div+="<div class='search-module-condition'><span class='search' style='margin-left: 78px;'></span><input type='submit' value='装箱单数据确认'  class='baseBtn'> </div>";
+                    div+="</form>";
+                    $('#warehouse-module').append(div);
+                    $("#module-pack").dialog('close');
+                    $("#warehouse-module").dialog('open');
+                }else  if(data['refCode']==null && data['serviceCode']=='FBA'){
+                    console.log(data);
+                    var div="<form method='post' enctype='multipart/form-data' action='/delivery/index/package-detail' id='formdata2'class='submitReturnFalse'>";
+                    div+="<div class='search-module-condition'>";
+                    div+="<span class='search'>海外仓服务商：<input type='text' readonly='true' name='serviceName' value="+data['serviceName']+"><input type='hidden'  name='do_id' value="+data['do_id']+">"+"<input type='hidden' name='ute_id' value="+data['ute_id']+">"+"<input type='hidden' name='serviceCode' value="+data['serviceCode']+"></span>";
+                    div+="<input type='hidden' name='toWarehouseId' value="+data['toWarehouseId']+">";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;海外仓库：</span>";
+                    div+="<select class='selectCss input_text2' name='ServiceWarehouse' id='ServiceWarehouse' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    $.each(data['ServiceWarehouse'],function (key,value) {
+                        div+="<option  value='"+value['warehoueId']+"'>"+value['warehouseDesc']+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运输方式：</span>";
+                    div+="<select class='selectCss input_text2' name='smCode' id='smCode' style='width: 120px;'>";
+                    div+="<option value=''>全部</option>";
+                    if(data['smCode']) {
+                        $.each(data['smCode'], function (key, value) {
+                            div += "<option  value=" + value['smCode'] + ">" + value['smNameCn'] + "</option>";
+                        });
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;店铺账号：</span>";
+                    div+="<select class='selectCss input_text2' name='userAccountArr' id='userAccountArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['userAccountArr']){
+                        $.each(data['WarehouseInfo']['userAccountArr'],function (key,value) {
+                            div+="<option  value='"+value+"'>"+value+"</option>";
+                        });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目标市场：</span>";
+                    div+="<select class='selectCss input_text2' name='countryArr' id='countryArr' style='width: 120px;'>";
+                    $.each(data['WarehouseInfo']['countryArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贴标方：</span>";
+                    div+="<select class='selectCss input_text2' name='labelTypeArr' id='labelTypeArr' style='width: 200px;'>";
+                    $.each(data['WarehouseInfo']['labelTypeArr'],function (key,value) {
+                        div+="<option  value='"+value+"'>"+value+"</option>";
+                    });
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;包装类型：</span>";
+                    div+="<select class='selectCss input_text2' name='packageTypeArr' id='packageTypeArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['packageTypeArr']){
+                        $.each(data['WarehouseInfo']['packageTypeArr'],function (key,value) {
+                            div+="<option  value='"+key+"'>"+value+"</option>";
+                        });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;起运地：</span>";
+                    div+="<select class='selectCss input_text2' name='addressArr' id='addressArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['addressArr']){
+                        $.each(data['WarehouseInfo']['addressArr'],function (key,value) {
+                            console.log(value);
+                            div+="<option  value='"+value['sab_id']+"'>"+value['sab_country_name']+value['sab_state']+value['sab_city']+value['sab_street_address1']+"</option>";
+                        });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="<br><span class='search'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纸张类型：</span>";
+                    div+="<select class='selectCss input_text2' name='pageTypeArr' id='pageTypeArr' style='width: 120px;'>";
+                    if(data['WarehouseInfo']['pageTypeArr']){
+                        $.each(data['WarehouseInfo']['pageTypeArr'],function (key,value) {
+                            div+="<option  value="+key+">"+value+"</option>";
+                        });}else{
+                        div+="<option  value=''></option>";
+                    }
+                    div+="</select>";
+                    div+="</div>";
+                    div+="<div class='search-module-condition'><span class='search' style='margin-left:78px;'></span><input type='submit' value='装箱单数据确认'  class='baseBtn'> </div>";
+                    div+="</form>";
+                    $('#warehouse-module').append(div);
+                    $("#module-pack").dialog('close');
+                    $("#warehouse-module").dialog('open');
+                }else {
+                    if ((data['refCode']=='EC')) {
+                        console.log(data);
+                        var div = "<form method='post' enctype='multipart/form-data' action='/delivery/index/package-detail' id='formdata2'class='submitReturnFalse'>";
+                        div += "<div class='search-module-condition'>";
+                        div += "<span class='search'>海外仓服务商：</span><input type='text' readonly='true' name='serviceName' value=" + data['serviceName'] + "><input type='hidden'  name='do_id' value=" + data['do_id'] + ">" + "<input type='hidden' id='uteId' name='ute_id' value=" + data['ute_id'] + ">" + "<input type='hidden' name='serviceCode' id='pan' value=" + data['serviceCode'] + ">";
+                        div += "<input type='hidden' name='toWarehouseId' value=" + data['toWarehouseId'] + ">";
+                        div += "<br><span class='search' style='margin-left:30px;'>海外仓库：</span>";
+                        div += "<select class='selectCss input_text2' name='ServiceWarehouse' id='ServiceWarehouse' style='width: 120px;'>";
+                        div += "<option value=''>全部</option>";
+                        $.each(data['ServiceWarehouse'], function (key, value) {
+                            div += "<option  value='" + value['warehoueId'] + "'>" + value['warehouseDesc'] + "</option>";
+                        });
+                        div += "</select>";
+                        div += "<br><span class='search' style='margin-left:30px;'>运输方式：</span>";
+                        div += "<select class='selectCss input_text2' name='smCode' id='smCode' style='width: 120px;'>";
+                        div += "<option value=''>全部</option>";
+                        if (data['smCode']) {
+                            $.each(data['smCode'], function (key, value) {
+                                div += "<option  value=" + value['smCode'] + ">" + value['smNameCn'] + "</option>";
+                            });
+                        }
+                        div += "</select>";
+                        div += "<br><span class='search' style='margin-left:30px;'>交货方式：</span>";
+                        div += "<select class='selectCss input_text2' name='incomeType' id='incomeType' style='width: 120px;'>";
+                        div += "<option value=''>全部</option>";
+                        if (data['WarehouseInfo']['incomeTypeArr']) {
+                            $.each(data['WarehouseInfo']['incomeTypeArr'], function (key, value) {
+                                div += "<option  value='" + value + "'>" + value + "</option>";
+                            });
+                        } else {
+                            div += "<option  value=''></option>";
+                        }
+                        div += "</select>";
+                        div += "<br><span class='search' style='margin-left:30px;'>参考单号：</span>";
+                        div +="<input type='text' name='referenceNo' value=''>";
+                        div += "<br><span class='search'><font color='#f00'>(如果交货方式揽收,此地点必填)</font></span>";
+                        div += "<br><span class='search' style='margin-left: 30px;'>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</span>";
+                        div += "<select class='selectCss input_text2' name='regionIdLevel0' onchange='sheng()' id='regionIdLevel0' style='width: 120px;'>";
+                        div += "<option value=''>全部</option>";
+                        if (data['WarehouseInfo']['regionArr']) {
+                            $.each(data['WarehouseInfo']['regionArr'], function (key, value) {
+                                if(value['sc_region_level']==1) {
+                                    div += "<option  value=" + value['sc_region_id'] + ">" + value['sc_region_name'] + "</option>";
+                                }
+                            });
+                        } else {
+                            div += "<option  value=''></option>";
+                        }
+                        div += "</select>";
+                        div += "<br><span class='search' style='margin-left: 30px;'>市&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>";
+                        div += "<select class='selectCss input_text2' name='regionIdLevel1' onchange='shiqu()' id='regionIdLevel1' style='width: 120px;'>";
+                        div += "</select>";
+                        div += "<br><span class='search' style='margin-left: 30px;'>县&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>";
+                        div += "<select class='selectCss input_text2' name='regionIdLevel2' id='regionIdLevel2' style='width: 120px;'>";
+                        div += "</select>";
+                        div +="<br><span class='search'>街道（门牌号）：</span><input type='text' name='street' value=''>";
+                        div +="<br><span class='search'style='margin-left:47px;'>联系人：</span><input type='text' name='contacter' value=''>";
+                        div +="<br><span class='search' style='margin-left:30px;'>联系电话：</span><input type='text' name='contactPhone' value=''>";
+                        div += "<br><span class='search' style='margin-left:30px;'>交货仓库：</span>";
+                        div += "<select class='selectCss input_text2' name='transitWarehouseCode' id='transitWarehouseCode' style='width: 120px;'>";
+                        $.each(data['WarehouseInfo']['transitWarehouseArr'], function (key, value) {
+                            div += "<option  value=" + value['swi_warehouse_code'] + ">" + value['swi_warehouse_name'] + "</option>";
+                        });
+                        div += "</select>";
+                        div+="<br><span class='search' style='margin-left:30px;'>关税类型：</span>";
+                        div+="<select class='selectCss input_text2' name='dutypayType' id='dutypayType' style='width: 120px;'>";
+                        div+="<option value=''>请选择</option>";
+                        div+="<option  value='p'>实报实销</option>";
+                        div+="</select>";
+                        div += "<br><span class='search'>头程派送方式：</span>";
+                        div += "<select class='selectCss input_text2' name='shippingMethodArr' id='shippingMethodArr' style='width: 200px;'>";
+                        $.each(data['WarehouseInfo']['shippingMethodArr'], function (key, value) {
+                            div += "<option  value=" + value['product_code'] + ">" + value['product_name'] + "</option>";
+                        });
+                        div += "</select>";
+                        div +="<br><span class='search' style='margin-left:44px;'>跟踪号：</span><input type='text' name='trackingNumber' value=''>";
+                        div +="<br><span class='search'>预计发货时间：</span> <input type='text' name='etaDate' class='input_text datepicker dateFrom'/>";
+                        div +="<br><span class='search'  style='margin-left:30px;'>备注说明：</span> <input type='text' name='receivingDesc' value=''/>";
+                        div += "</div>";
+                        div += "<div class='search-module-condition'><span class='search'  style='margin-left:60px;'></span><input type='submit' value='装箱单数据确认'  class='baseBtn'> </div>";
+                        div += "</form>";
+                        $('#warehouse-module').append(div);
+                        $("#module-pack").dialog('close');
+                        $("#warehouse-module").dialog('open');
+                    }
+                }
+            },
+            error: function (data) {
+                    div='请选择服务商，该服务商没数据';
+                   $('#warehouse-module').append(div);
+                  $("#module-pack").dialog('close');
+                  $("#warehouse-module").dialog('open');
+            }
+        })
+    }
+
+    //反序列化方法
+    function unserialize(str){
+        var res = {};
+        if(!str){
+            return res;
+        }
+        str.split("&").forEach(function(v,k,arr){
+            var param = v.split('=');
+            res[param[0]] = param[1];
+        });
+        return res;
+    }
+
+   function create_pdf(){
+      var url = '/delivery/index/create-pdf-file';
+       window.open(url);
+   }
+
+
+</script>
+<style type="text/css">
+    .boundBtn {
+        float: right;
+        margin: 28px 25px 0 0;
+    }
+    .boundBtns {
+        float: right;
+        margin: 28px 55px 0 0;
+    }
+
+</style>
+
+<div id="module-container">
+    <div id="search-module">
+        <form id="searchForm" name="searchForm" class="submitReturnFalse">
+            <div style="padding:0" class="pack_manager_content">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" id="searchfilterArea" class="searchfilterArea">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="searchFilterText" style="width: 120px;">发货状态：</div>
+                            <div class="pack_manager">
+                                <input type="hidden" name="do_status" id="do_status" class="input_text keyToSearch">
+                                <a href="javascript:void(0)" onclick="searchFilterSubmit('do_status','',this)">全部</a>
+                                <a href="javascript:void(0)" onclick="searchFilterSubmit('do_status','3',this)">已发货</a>
+                                <a href="javascript:void(0)" onclick="searchFilterSubmit('do_status','4',this)">已签收</a>
+                                <a href="javascript:void(0)" onclick="searchFilterSubmit('do_status','2',this)">待发货</a>
+                                <a href="javascript:void(0)" onclick="searchFilterSubmit('do_status','1',this)">待处理</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="hidden" value="120" id="filterActionId">
+            <div class="search-module-condition">
+                <span class="searchFilterText" style="width: 120px;">单号：</span>
+                <select  class="selectCss2 " id="order_types"  style="width: 130px;height: 24px;">
+                    <option >请选择查询类型</option>
+                    <option  value="do_no">销售单号</option>
+                    <option  value="do_ship_no">物流单号</option>
+                </select>
+                <label title="" style="cursor: pointer;width: 80px;">
+                    <input type="text"  class="input_text keyToSearch" id="order_type" placeholder="请输入单号">
+                </label>
+            </div>
+            <div class="search-module-condition">
+                <span class="searchFilterText" style="width: 120px;">商品SKU号：</span>
+                <input type="text" name="doi_sku" class="input_text keyToSearch" id="txt" placeholder="请输入商品SKU号">
+            </div>
+            <div class="search-module-condition">
+                <span class="searchFilterText" style="width: 120px;">采购商：</span>
+                <input type="text" name="do_company" class="input_text keyToSearch" id="txt" placeholder="请输入采购商">
+            </div>
+            <div class="search-module-condition">
+                <span class="searchFilterText" style="width: 120px;"></span>
+                <input type="button" value="搜索" class="baseBtn submitToSearch">
+            </div>
+        </form>
+    </div>
+
+    <form id="exportForm" action="/delivery/index/execute-pack-list" style="display: none;" method="POST"></form>
+    <div id="module-table">
+        <div class="module-head">
+            <span class="module-title">商品发货列表</span>
+            <button id="import" class="initBtn otherBtn boundBtn" style="width: 100px;" onclick="more_add_delivery()">批量导入</button>
+            <button id="import" class="initBtn otherBtn boundBtns" style="width: 100px;"  onclick="make_delivery_Packing_list()">生成装箱单</button>
+        </div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-module">
+            <tr class="table-module-title">
+                <td width="2%" class="ec-center"><input type="checkbox" class="checkAll"></td>
+                <td width="3%">序号</td>
+                <td width="15%">销售单号</td>
+                <td width="15%">物流单号</td>
+                <td width="12%">发货日期</td>
+                <td width="12%">预计到货时间</td>
+                <td width="15%">承运方公司</td>
+                <td width="15%">采购商</td>
+                <td width="8%">费用(￥)</td>
+                <td width="10%">状态</td>
+                <td width="8%">操作</td>
+            </tr>
+            <form id="listForm" method="POST" action=""></form>
+
+            <tbody id="table-module-list-data"><tr class="table-module-b1"><td colspan="12">请搜索...</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination"></div>
+    <div class="to_top_div" data-show="false"><span style="float: left;cursor: pointer;padding: 0px 2px;" title="返回顶部" class="iconToTop" onclick="toTop();"></span><span style="float: left;cursor: pointer;padding: 0px 2px;" title="前往底部" class="iconToBottom" onclick="toBottom();"></span>
+    </div>
+</div>
+<!--  批量插入发货单  -->
+<div style="display:none" id="upload-dialog" title="批量导入">
+    <form method='post' enctype="multipart/form-data" action='/delivery/index/upload' id='upload_form'
+          class="submitReturnFalse">
+        <div class="search-module-condition">
+            上传文件：
+            <input type="file" name="fileToUpload" id="fileToUpload" class="input_text"/>
+            <input type="button" value="确认上传" onclick='return ajaxFileUpload();'>
+        </div>
+        <div class="search-module-condition" style="padding-left:28px;margin-top:20px">
+            模板：<a href="/delivery/index/make-excel" style="color:#0090E1">模板下载</a>
+        </div>
+        <div class="search-module-condition" style="padding-left:28px;">
+            <span style="color:#E9C341;">注意：仅支持 xls 文件</span>
+        </div>
+        <div class="search-module-condition" style="padding-left:28px;">
+            提示：当导入数据存在异常时，全部都会失败;
+        </div>
+        <div class="search-module-condition">
+            <span class="searchFilterText" style="width: 160px; padding-left:8px;">请选择要导入的ERP名：</span>
+            <select  class="selectCss2 " id="ute_id"  style="width: 130px;height: 24px;">
+                <{foreach from=$uteErpNameDatas item=w key=k }>
+                <option  value="<{$k}>" class="ute_id"  name="ute_id=<{$k}>"><{$w}></option>
+                <{/foreach}>
+
+            </select>
+        </div>
+    </form>
+
+</div>
+
+<!-- 查看发货单详情  -->
+<div id="dialogDeliveryDetail">
+    <div id="delviry"></div>
+     <table class="table_delivery_order_details" width="120%" border="0" cellpadding="0" cellspacing="0" class="table-module">
+         <tr class="table_delivery_order_details_title">
+             <td>产品代码</td>
+             <td>商品名称</td>
+             <!--  <td>产品状态</td>-->
+              <td>产品数量</td>
+              <td>产品尺寸</td>
+              <td>产品重量</td>
+              <td>总箱数</td>
+              <td>单箱净重</td>
+              <td>总净重</td>
+              <td>单箱毛重</td>
+              <td>总毛重</td>
+              <td>总立方</td>
+              <td>箱内尺寸</td>
+              <td>箱号</td>
+              <!-- <td>发货状态</td>-->
+              <td>时间</td>
+              <!-- <td>操作</td>-->
+          </tr>
+          <tbody id="deliveryData"></tbody>
+      </table>
+ </div>
+<!--生成装箱单部分  -->
+<div id="module-pack"  style="display:none" >
+    <form method='post' enctype="multipart/form-data" action='' id='formdata'
+          class="submitReturnFalse">
+        <div class="search-module-condition">
+            <span class="searchFilterText">海外仓服务商：</span>
+            <select class="selectCss input_text2" name="service_code" id="service_code" style="width: 200px;">
+             </select>
+         </div>
+        <!--<div class="search-module-condition">
+             <span class="searchFilterText">装箱单步骤：</span>
+             <table width="600" cellspacing="0" cellpadding="0" style="margin:0;padding:0;">
+                 <tbody><tr>
+                     <td class="point_number1"><div class="point_number">1</div></td>
+                     <td class="point_number1 point_number_font">选择装箱明细</td>
+                     <td class="point_number1"><div class="point_arrow"><img src="/images/base/jiantou.jpg" border="0"></div></td>
+                     <td class="point_number2"><div class="point_number">2</div></td>
+                     <td class="point_number2 point_number_font">装箱数据确认</td>
+                     <td class="point_number2"><div class="point_arrow"><img src="/images/base/jiantou.jpg" border="0"></div></td>
+                     <td class="point_number3"><div class="point_number">3</div></td>
+                     <td class="point_number3 point_number_font">建立入库单</td>
+                     <td class="point_number3"><div class="point_arrow"><img src="/images/base/jiantou.jpg" border="0"></div></td>
+                     <td class="point_number4"><div class="point_number">4</div></td>
+                     <td class="point_number4 point_number_font">确认发货</td>
+                     <td class="point_number4"><div class="point_arrow"><img src="/images/base/jiantou.jpg" border="0"></div></td>
+                     <td class="point_number5"><div class="point_number">5</div></td>
+                     <td class="point_number5 point_number_font">打印单据</td>
+                 </tr>
+                 </tbody></table>
+         </div>
+         <div class="search-module-condition">
+             <span class="searchFilterText">预计发货时间：</span>
+             <input type="text" name="firstDateinfo" class="input_text datepicker dateFrom" />
+         </div>-->
+
+         <div class="search-module-condition">
+             <span class="searchFilterText">&nbsp;</span>
+             <input type="button" value="开始生成装箱单" onclick="make_pack()" class="baseBtn">
+         </div>
+  </form>
+</div>
+<style>
+    .search {
+        text-align: right;
+        height: 30px;
+        line-height: 30px;
+        width: 120px;
+        font-weight: bolder;
+        font-size: 15px;
+    }
+</style>
+<div id="warehouse-module"  style="display:none" >
+</div>
+
+

@@ -1,0 +1,94 @@
+.menu-body {
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 185px;
+	height: 750px;
+	position: fixed;
+	background: #f9f9f9;
+	font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+	border-right: solid 1px #999;
+}
+
+.narbar {
+	height: 74px;
+    width: auto;
+    border-bottom: 1px solid #BFC8D8;
+}
+
+.narbar li {
+	margin: 0;
+    padding: 8px 0 0 20px;
+}
+
+.narbar li:hover {
+	cursor: pointer;
+	background: #e8e8e8;
+}
+
+.narbar li a {
+	line-height: 22px;
+    overflow: hidden;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+    color:#354b66;
+    display: block;
+}
+
+.narbar li img {
+	float: left;
+	border: 0;
+	padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.compose-btn {
+	background: url('/images/header/20120326105256638.png');
+}
+
+.check-btn {
+	background: url('/images/header/20120326105256701.png');
+}
+
+.nav-mid-bar {
+    bottom: 3px;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    padding-top: 5px;
+    border-top: 1px solid #f4f5f6;
+}
+
+.folder-ul {
+	padding-top: 5px;
+}
+
+.folder-ul li {
+	height: 22px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 2px 0 20px;
+    margin: 0 0 1px;
+}
+
+.folder-ul li:hover {
+	cursor: pointer;
+	background: #e8e8e8;
+}
+
+.folder-ul li a {
+	display: block;
+	width: 100%;
+	color: #354b66;
+	text-decoration: none;
+    font-size: 12px;
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.active {
+	background: #e8e8e8;
+}

@@ -1,0 +1,548 @@
+/* 标签框架的样式，即每一个标签最外层框架 */
+.fpx-label-frame {
+	width: 75mm;
+	height: 81mm;
+ 	/* width: 304px;
+	height: 340px; */
+	border: 1px dotted gray;
+	margin: 0 auto;
+	position: relative;
+}
+.fpx-label-frame-main,
+.fpx-label-frame-bottom-main {
+/* 	padding: 3.5mm; */
+	padding: 5px 4px;
+}
+.fpx-label-frame-bottom {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.fpx-label-row {
+	width: 100%;
+	overflow: hidden;
+}
+.fpx-label-row-relative {
+	position: relative;
+}
+.fpx-label-blankRow {
+	height: 20px;
+}
+.fpx-label-col-right-bottom {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.fpx-label-col-border, .fpx-label-row-border,
+.fpx-label-col-row-border {
+	border: 1px solid black;
+	margin-bottom: 2px;
+}
+.fpx-label-col-row {
+	width: 100%;
+	overflow: hidden;
+}
+.fpx-label-row-top-bottom-border {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.fpx-label-row-top-bottom-border-2 {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+.fpx-label-row-bottom-border {
+	border-bottom: 1px solid black;
+}
+.fpx-label-col-right-border {
+	border-right: 1px solid black;
+}
+.fpx-label-col-left-border {
+	border-left: 1px solid black;
+}
+.fpx-label-col-left-right-border {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
+.fpx-label-col {
+	width: auto;
+	height: auto;
+	float: left;
+}
+.fpx-label-col-center {
+	width: 100%;
+	text-align: center;
+}
+.fpx-label-col-right {
+	float: right;
+}
+/*label 分页*/
+.fpx-label-label .fpx-label-clear,
+.fpx-label-label .fpx-label-page-break {
+	display: none;
+}
+.fpx-label-clear-c {
+	clear: both;
+}
+.fpx-label-page-break-c {
+	page-break-after: always;
+}
+.fpx-label-label .fpx-label-clear-c,
+.fpx-label-label .fpx-label-page-break-c {
+	display: block;
+}
+.fpx-label-clear-c,
+.fpx-label-page-break-c {
+	display: none;
+}
+.fpx-label-label .fpx-label-clear-a4,
+.fpx-label-label .fpx-label-page-break-a4,
+.fpx-label-label .fpx-label-page-top-maring {
+	display: none !important;
+}
+.fpx-label-label-container + .fpx-label-clear,
+.fpx-label-label-container + .fpx-label-clear + .fpx-label-page-break,
+.fpx-declaration-container-show + .fpx-label-clear,
+.fpx-declaration-container-show + .fpx-label-clear + .fpx-label-page-break,
+.fpx-peihuolist-container-show + .fpx-label-clear,
+.fpx-peihuolist-container-show + .fpx-label-clear + .fpx-label-page-break {
+	display: block;
+}
+.fpx-declaration-container-blank + .fpx-label-clear,
+.fpx-declaration-container-blank + .fpx-label-clear + .fpx-label-page-break {
+	display: none;
+}
+/* a4纸张样式 */
+.fpx-label-a4 {
+/* 	width: 814px; */
+	width: 170mm;
+	margin: 0 auto;
+}
+.fpx-label-a4 .fpx-label-content {
+/* 	padding: 20px 10px; */
+	padding: 0 5px;
+	overflow: hidden;
+}
+.fpx-label-a4 .fpx-label-container {
+/* 	width: 358px; */
+	border: 1px dotted gray;
+	margin: 1px auto 13px;
+}
+.fpx-label-a4 .fpx-order-container {
+	/* 	width: 397px; */
+		margin: 0 auto;
+		padding: 0 15px;
+}
+.fpx-label-a4 .fpx-order-container {
+	float: left;
+}
+.fpx-label-a4 .fpx-order-container-two-content {
+	width: 633px;
+	padding: 0;
+}
+.fpx-label-a4 .fpx-order-container-two-content .fpx-label-container {
+	float: left;
+	margin: 1px 15px 13px;	
+}
+.fpx-label-a4 .fpx-order-container-two-content .fpx-declaration-blank {
+	display: block;
+}
+.fpx-label-label .fpx-declaration-blank,
+.fpx-label-a4 .fpx-declaration-blank {
+	display: none;
+}
+.fpx-label-a4 .fpx-label-frame {
+	border: none;
+}
+.fpx-label-a4 .fpx-label-page-break,
+.fpx-label-a4 .fpx-label-clear {
+	display: none !important;
+}
+.fpx-label-clear-a4 {
+	clear: both;
+}
+/* .fpx-label-a4 .fpx-label-page-break-a4,
+.fpx-label-a4 .fpx-label-clear-a4 {
+	display: block;
+} */
+.fpx-label-page-break,
+.fpx-label-page-break-a4 {
+	/* width: 100%;
+	height: 42px;
+	float: left;
+	border-bottom: 1px dotted gray;
+	margin-bottom: 20px; */
+	page-break-after: always;
+}
+.fpx-label-clear-a4,
+.fpx-label-page-top-maring,
+.fpx-label-page-break-a4,
+.fpx-label-page-bottom-maring  {
+	display: none;
+}
+.fpx-order-container-two-content-page + .fpx-label-page-top-maring,
+.fpx-order-container-two-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4,
+.fpx-order-container-two-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4,
+.fpx-order-container-two-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4 + .fpx-label-page-bottom-maring,
+.fpx-order-container-one-content-page + .fpx-label-page-top-maring,
+.fpx-order-container-one-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4,
+.fpx-order-container-one-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4,
+.fpx-order-container-one-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4 + .fpx-label-page-bottom-maring,
+.fpx-order-container-three-content-page + .fpx-label-page-top-maring,
+.fpx-order-container-three-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4,
+.fpx-order-container-three-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4,
+.fpx-order-container-three-content-page + .fpx-label-page-top-maring + .fpx-label-clear-a4 + .fpx-label-page-break-a4 + .fpx-label-page-bottom-maring {
+	display: block;
+}
+.fpx-label-page-top-maring,
+.fpx-label-page-bottom-maring {
+	width: 100%;
+/* 	height: 20px; */
+}
+.fpx-label-page-last {
+	display: none !important;
+}
+/* hnxb 个别样式 */
+.fpx-label-frame-hnxb .fpx-label-insurance-sign, 
+.fpx-label-frame-hnxb .fpx-label-return-sign, 
+.fpx-label-frame-hnxb .fpx-label-gjz-sign {
+	width: 15px;
+	height: 13px;
+}
+.fpx-label-frame-hnxb .fpx-battery-img {
+	width: 10px;
+	height: 10px;
+	margin: 1px;
+}
+/* sggh 个别样式 */
+.fpx-label-frame-sggh .fpx-label-tracking-no {
+	padding-left: 70px;
+}
+.fpx-label-frame-sggh .fpx-label-barcode {
+	width: auto;
+}
+.fpx-label-frame-sggh .fpx-label-pickup-end,
+.fpx-label-frame-sgpy .fpx-label-pickup-end  {
+	display: block;
+}
+/* fjxb 个别样式  */
+.fpx-label-frame-fjxb .fpx-label-orderNo span {
+	display: none;
+}
+/* 中国EMS 个别样式*/
+.fpx-label-frame-chems .fpx-label-orderNo span {
+	display: none;
+}
+/* hkxb 个别样式*/
+.fpx-label-frame-hkxb .fpx-label-gh-sign {
+	float: left;
+}
+.fpx-label-frame-hkxb .fpx-label-tracking-no {
+	margin-left: 40px;
+	display: block;
+}
+.fpx-label-frame-hkxb .fpx-label-tracking-no {
+	font-size: 12px;
+}
+.fpx-label-frame-hkxb .fpx-label-consignee-info {
+	width: 160px;
+}
+.fpx-label-frame-hkxb .fpx-label-pickup-zone {
+	overflow: hidden;
+	width: 72px;
+}
+.fpx-label-frame-hkxb .fpx-label-pickup-zone .fpx-label-pickup-zone-main {
+	float: right;
+}
+.fpx-label-frame-hkxb .fpx-label-pickup-end {
+	display: block;
+	float: right;
+	width: 56px;
+}
+.fpx-label-frame-hkxb .fpx-label-charge-zone {
+	height: auto;
+	line-height: normal;
+	margin-left: 10px;
+}
+.fpx-label-frame-hkxb .fpx-label-barcode {
+	width: auto;
+}
+
+/* 中国邮政广州 个别样式  */
+.fpx-label-frame-chgz .fpx-label-barcode {
+	width: 210px;
+}
+.fpx-label-frame-chgz .fpx-label-ch-air-sign {
+	padding: 0 10px;
+}
+.fpx-label-chgz-ghSign-width {
+	width: 22px;
+}
+/* 福州小包 */
+.fpx-label-col-fzxb .fpx-label-charge-zone {
+	height: 20px;
+	line-height: 20px;
+}
+/* finland */
+.fpx-label-frame-finland .fpx-label-insurance-sign,
+.fpx-label-frame-finland .fpx-label-return-sign,
+.fpx-label-frame-finland .fpx-label-gjz-sign {
+	width: 18px;
+	height: 15px;
+	margin-bottom: 25px;
+}
+.fpx-label-frame-finland .fpx-label-pickup-zone .fpx-label-pickup-zone-main {
+	width: 30px;
+	margin-left: 3px;
+}
+.fpx-label-frame-finland .fpx-label-pickup-zone-code {
+	font-size: 14px;
+}
+/* DHL小包挂号特别样式  */
+.fpx-label-frame-dhlpacketplus .fpx-label-barcode {
+	width: 210px;
+}
+.fpx-label-frame-dhlpacketpy .fpx-label-barcode {
+	width: 100%;
+}
+.fpx-label-frame-dhlpacketplus .fpx-label-gh-sign {
+	font-size: 50px;
+	padding-right: 5mm;
+	padding-left: 0;
+}
+.fpx-label-frame-dhlpacketplus .fpx-label-barcode img {
+	padding-top: 1.5mm;
+	border-top: 2px solid #000;
+	height: 7mm;
+}
+.fpx-label-frame-dhlpacketpy .fpx-label-barcode img {
+	border-top: none;
+}
+.fpx-label-frame-dhlpacketplus .fpx-label-tracking-no {
+	font-style: italic;
+}
+.fpx-label-dhlpacketplusforau .fpx-label-barcode {
+	width: 100%;
+}
+.fpx-label-dhlpacketplusforau .fpx-label-barcode img {
+	border: none;
+	padding-top: 0;
+}
+.fpx-label-dhlpacketplusforau .fpx-label-dhlpacketplus-recommande {
+/* 	font-weight: bold; */
+}
+/* -------------- 从14年12月22号开始,后面做的标签的样式都放在这下面,标签上的元素不在写到element中再回到标签中,而是直接写到模板中 ---------*/
+/* 美E通模板样式  */
+.epac-indicator {
+	width: 47px;
+	height: 47px;
+	line-height: 47px;
+	font-size: 42px;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid #000;
+}
+.epac-logo {
+	padding-left: 30px;
+	line-height: 12px;
+}
+.epac-logo img {
+	width: 0.9in;
+}
+.epac-sg-logo {
+	border-bottom: 1px solid #000;
+}
+.epac-sg-logo img {
+	height: 0.3in;
+}
+.epac-usps-logo img {
+	height: 0.2in;
+}
+.epac-returnSign {
+	padding-left: 10px;
+}
+.label-frame-epac .epac-returnSign img {
+	/* width: 20px;
+	height: 20px; */
+}
+.epac-air {
+	font-size: 8px;
+	border: 1px solid #000;
+	line-height: 9px;
+	padding: 1px 8px;
+}
+.epac-pickup-zone {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+.epac-return-address,
+.epac-ra-state {
+	font-size: 6px;
+	line-height: 7px;
+	width: 105px;
+}
+.epac-ra-state {
+	padding-top: 8px;
+	font-weight: bold;
+}
+.epac-zip {
+	width: 169px;
+	text-align: center;
+	font-size: 8px;
+	line-height: 8px;
+}
+.epac-zip div {
+	padding-bottom: 1px;
+}
+.epac-zip img {
+	width: 100px;
+	height: 36px;
+	margin: 15px 0;
+}
+.epac-barcode {
+	font-size: 12px;
+	line-height: 13px;
+	font-weight: bold;
+	text-align: center;
+	width: 275px;
+}
+.epac-barcode img {
+	width: 220px;
+	height: 60px;
+	margin: 15px 0;
+}
+.epac-to {
+	width: 30px;
+	text-align: center;
+	padding-top: 8px;
+}
+.epac-from {
+	font-size: 8px;
+	line-height: 8px;
+	padding-bottom: 1px;
+}
+.epac-consignee-addr {
+	width: 240px;
+	font-size: 8px;
+	line-height: 9px;
+}
+.epac-barcode-state {
+	padding-top: 1px;
+}
+.epac-trackingno {
+	padding-bottom: 1px;
+}
+/* 美E通报关单模板样式  */
+.fpx-declaration-frame.fpx-declaration-epac .fpx-declaration-main {
+	font-size: 8px;
+	border: none;
+	padding: 8px 1px;
+}
+.declaration-epac-logo {
+	font-size: 6px;
+	line-height: 7px;
+}
+.declaration-epac-logo img {
+	width: 80px;
+	height: 36px;
+}
+.declaration-epac-barcode {
+	font-weight: bold;
+	font-size: 10px;
+	text-align: center;
+}
+.declaration-epac-barcode img {
+	width: 120px;
+	height: 40px;
+}
+.declaration-epac-logo-py {
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+.declaration-epac-logo-py img {
+	width: 73px;
+	height: 36px;
+}
+.declaration-epac-return-addr {
+	width: 140px;
+	font-size: 8px;
+	line-height: 9px;
+}
+.declaration-epac-contactno {
+	padding-top: 10px;
+}
+.declaration-epac-senderref {
+	border-top: 1px solid #000;
+}
+.declaration-epac-consigneeAddr {
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	width: 140px;
+	height: 83px;
+	position: relative;
+}
+.declaration-epac-consigneeAddr  div {
+	position: absolute;
+	bottom: 3px;
+}
+.declaration-epac-no {
+	width: 15px;
+	text-align: center;
+}
+.declaration-epac-name {
+	width: 120px;
+}
+.declaration-epac-qty {
+	width: 17px;
+	text-align: center;
+}
+.declaration-epac-kg {
+	width: 20px;
+}
+.declaration-epac-val {
+	width: 45px;
+}
+.declaration-epac-totalWeight {
+	width: 138px;
+}
+.declaration-epac-totalWeight-value {
+	width: 20px;
+}
+.declaration-epac-totalPrice-value {
+	width: 45px;
+}
+.declaration-epac-value .declaration-epac-no,
+.declaration-epac-value .declaration-epac-name,
+.declaration-epac-value .declaration-epac-qty,
+.declaration-epac-value .declaration-epac-kg,
+.declaration-epac-value .declaration-epac-val,
+.declaration-epac-value .declaration-epac-origin {
+/* 	height: 15px; */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.declaration-epac-sig {
+	font-weight: bold;
+	padding-top: 3px;
+}
+.declaration-epac-sig span {
+	text-align: right;
+	font-size: 12px;
+	float: right;
+}
+
+
+@media screen {
+	.fpx-label-label .fpx-label-container {
+		margin-bottom: 5px;
+	}
+}
+/* 打印时不打印border */
+@media print {
+	.fpx-label-frame {
+		border: none;
+	}
+}

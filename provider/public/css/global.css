@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ----------- global html css ------------- */
+body{ 
+	margin:0px; 
+	padding:0px; 
+	color:#666666; 
+	font-size:12px; 
+	background:#fff; 
+	font-family:"Microsoft YaHei",'微软雅黑','Simsun',Verdana,Arial,Helvetica,sans-serif;
+}
+p,h1,h2,h3,h4,h5,span,table,tr,td,div,dl,dl dd,ul,ul li {
+    margin:0px;
+    padding:0px;
+}
+ul{list-style:none;}
+img{border: 0px;}
+button,input,select,textarea,form, { margin:0px;padding:0px; font-size:12px; color:#666;}
+a{color:#0090e1;text-decoration:none;}
+a:hover{color:#0090e1; text-decoration:underline;}
+/* ----------- end ------------- */

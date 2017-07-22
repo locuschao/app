@@ -1,0 +1,51 @@
+.order-details {
+	font-family: "Microsoft YaHei",'微软雅黑','Simsun',Verdana,Arial,Helvetica,sans-serif!important;
+}
+
+.order-details-table {
+	margin-bottom: 20px;
+}
+
+.order-details-table tbody tr td {
+    padding: 8px 1px 8px 1px;
+	width: 28%;
+}
+
+.item-details {
+	margin-bottom: 30px;
+}
+
+.log-details {
+	min-height: 150px;
+}
+
+.order-btn-div {
+	float: right;
+	margin: 2px 5px 0 0;
+	font-size: 14px;
+}
+
+.confirm-btn {
+	margin-right: 15px;
+}
+
+.table_order_details {
+	border: solid 1px #ccc;
+	border-spacing: 0px;
+}
+
+.table_order_details > tbody > tr > td {
+	line-height: 20px;
+    padding: 5px;
+    word-wrap: break-word;
+    border: none;
+}
+
+.table_order_details_title {
+	background: #fff;
+}
+
+.table_order_details_title > td {
+    font-weight: 800;
+    border-bottom: solid 1px #ccc!important;
+}

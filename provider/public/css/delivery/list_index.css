@@ -1,0 +1,34 @@
+/**
+* 发货单详情css
+*/
+#dialogDeliveryDetail{
+     display: none;
+}
+#dialogDeliveryDetail #tables{
+     margin-bottom: 10px;
+}
+
+#dialogDeliveryDetail .opration_area_export .btns{
+    width: 100px;
+}
+
+.table_delivery_order_details {
+	border: solid 1px #ccc;
+	border-spacing: 0px;
+}
+
+.table_delivery_order_details > tbody > tr > td {
+	line-height: 20px;
+    padding: 5px;
+    word-wrap: break-word;
+    border: none;
+}
+
+.table_delivery_order_details_title {
+	background: #fff;
+}
+
+.table_delivery_order_details_title > td {
+    font-weight: 800;
+    border-bottom: solid 1px #ccc!important;
+}

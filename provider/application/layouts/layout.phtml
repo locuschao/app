@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <!--
+    <meta http-equiv="x-ua-compatible" content="ie=7"/>
+    -->
+     <link type="image/x-icon" rel="shortcut icon" href="<?php echo $this->layout()->cacheUrl;?>/images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/ui-lightness/jquery-ui.min.css?20161026"/>
+    <!-- <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/global.css?20161026"/> -->
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/bootstrap.min.css?20170620"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/font-awesome/css/font-awesome.min.css?20170619"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/public/index.css?20170620"/>
+    <!-- <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/public/layout.css?20161026"/> -->
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/public/head.css?20161026"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/js/chosen/chosen.min.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/jquery.alerts.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/spinners.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo $this->layout()->cacheUrl;?>/css/public/common.css?20170619"/>
+
+    <title>供应商平台</title>
+    <script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery-myProject.js"></script>
+    <script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery-myAjaxForm.js"></script>
+    <script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="/js/init.js?v=20161026"></script>
+	<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery.alerts.js"></script>
+	<script type="text/javascript">
+	    //语言
+	    var locale_message_language = '<?php echo $this->layout()->lang;?>';
+	    <?php echo $this->layout()->licensesByJs;?>
+	</script>
+<!-- 权限按钮控制  start -->
+<?php if($this->layout()->authBtn['ask']==1):?>
+	<style type="text/css">
+	body .authBthClazz{display:none;}
+	<?php
+		$request_uri = $this->layout()->request_uri;
+	?>
+	</style>
+	<script type="text/javascript">
+	/* 权限按钮控制 start
+	 */
+	var request_uri = '<?php echo $request_uri;?>';
+	var authBtnClazzJson = <?php echo $this->layout()->authBtnClazzJson?$this->layout()->authBtnClazzJson:'[]';?>;
+	function buttonAuth(){
+		if(authBtnClazzJson.length>0){
+			$.each(authBtnClazzJson,function(k,v){
+				//alert(v);
+				$('.'+v).show();
+			});
+		}else{
+			$('.authBthClazz').show();
+		}
+	}
+	$(function(){
+		buttonAuth();
+		$("body").ajaxComplete(function(event,request, settings){
+			buttonAuth();
+		 });
+	});
+	/*
+	 * 权限按钮控制 end
+	 */
+
+	</script>
+<?php else: ?>
+<script type="text/javascript">
+var request_uri = '<?php echo $request_uri;?>';
+var authBtnClazzJson = [];
+	function buttonAuth(){
+
+	}
+</script>
+<?php endif;?>
+<!-- 权限按钮控制  end -->
+</head>
+<body>
+<?php echo $this->layout()->content;?>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery-cookie.js"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery.form.js"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery.pagination.js"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/mod.js?20161026"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/searchFilter.js"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/jquery.myLoading.js"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/common.js?20161026"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/locale/oms-lang-en_US.js?20161026"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/locale/oms-lang-zh_CN.js?20161026"></script>
+<script type="text/javascript" src="<?php echo $this->layout()->cacheUrl;?>/js/locale/locale_message.js?20161026"></script>
+</body>
+</html>

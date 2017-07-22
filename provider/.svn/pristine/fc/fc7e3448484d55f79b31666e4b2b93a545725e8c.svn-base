@@ -1,0 +1,209 @@
+.module-container {
+    width: auto;
+    height: 715px;
+	margin: 0 0 0 186px;
+    background-color: #fff;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w150 {
+	width: 150px;
+}
+
+.message-div {
+	margin: 20px 80px 15px 50px;
+}
+
+.write-table-message {
+	width: 100%;
+}
+
+.write-table-message tbody tr td {
+	padding: 5px 0 10px 10px;
+}
+
+.title {
+	text-align: right;
+}
+
+.div-text {
+    border: 1px solid #a5c3e0;
+    border-top: 1px solid #89accd;
+    border-right: 1px solid #89accd;
+    border-radius: 3px;
+    box-shadow: 1px 2px 2px #e5eaee inset;
+    background-color: #fff;
+    padding: 1px;
+    width: auto;
+    height: 20px;
+    min-height: 18px;
+    font-family: Tahoma;
+    cursor: text;
+}
+
+.user-text {
+	float: left;
+    border: none;
+    overflow: hidden;
+    width: 13px;
+	margin: 1px -13px 1px 0;
+    height: 16px;
+    background: transparent;
+}
+
+.user-text input {
+	border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font-family: Tahoma;
+    background: transparent;
+}
+
+.user-base {
+    height: 16px;
+    margin: 1px 3px 1px 3px;
+    cursor: default;
+    color: #333;
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.user-base-select {
+	background-color: #ddd;
+}
+
+.user-selected {
+	color: #fff;
+	background-color: #475d76;
+}
+
+.eheditor-simple {
+	height: 300px;
+    width: 100%;
+}
+
+.btn-div {
+	float: right;
+}
+
+.btn-div button {
+	width: 85px;
+	margin-top: 10px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+.search-user-div {
+	float: left;
+	width: 285px;
+}
+
+.selected-user-div {
+	float: left;
+    margin-left: 25px;
+}
+
+.selected-number-div {
+	float: left;
+	width: 200px;
+}
+
+.selected-user-clear {
+	float: left;
+}
+
+.selected-user-list {
+	float: left;
+}
+
+.search-user-name-btn {
+	margin-left: 10px;
+}
+
+.flow-div {
+    display: none;
+    margin: 20px 80px 15px 50px;
+}
+
+.business-div {
+    background-color: #fff!important;
+    min-height: 250px!important;
+    margin: 10px 5px 5px 5px;
+}
+
+.search-bar {
+    margin-top: 5px;
+}
+
+.search-bar input {
+    width: 250px;
+}
+
+.search-btn {
+    margin-left: 10px;
+}
+
+.business-list {
+    margin-top: 15px;
+}
+
+.business-list {
+    height:150px;
+}
+
+.business-base {
+    border: solid 1px #ccc;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 520px;
+}
+
+.business-base table {
+    width: 100%;
+}
+
+.business-base table thead tr th {
+    padding-bottom: 6px;
+    border-bottom: solid 1px #999;
+    text-align: left;
+}
+
+.business-table-body tr td {
+    padding: 3px;
+}
+
+.business-selected {
+    border: solid 2px #4ae;
+}
+
+.node-div {
+    display: none;
+    margin-left: 31px;
+    border: solid 1px #ccc;
+}
+
+.node-div table {
+    width: 100%;
+}
+
+.node-title {
+    width: 50px;
+    text-align: right;
+}
+
+.business-content {
+    display: none;
+}

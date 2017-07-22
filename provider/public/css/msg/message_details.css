@@ -1,0 +1,241 @@
+.module-container {
+    width: auto;
+    height: 715px;
+	margin: 0 0 0 186px;
+    background-color: #f6fcff;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 0!important;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w150 {
+	width: 150px;
+}
+
+.op-div {
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #9fa8b3;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#f3f3f3),to(#dde2e7));
+}
+
+.btn-group {
+    float: left;
+    margin: 12px 0 8px 10px;
+}
+
+.btn-group select {
+    width: 100px;
+    height: 25px;
+}
+
+.btn-gray {
+    float: left;
+    font-size: 12px;
+    text-decoration: none!important;
+    border: 1px solid #888;
+    color: #000000!important;
+    background: #F3F3F3;
+    background: -webkit-linear-gradient(top,#ffffff 0%,#ebebeb 90%,#F3F3F3 100%);
+    display: inline-block;
+    min-width: 24px;
+    line-height: 24px;
+    line-height: 23px\9\0;
+    _line-height: 26px;
+    _overflow-y: hidden;
+    padding: 0 12px;
+    margin: 0 5px 5px 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    border-radius: 3px;
+}
+
+.btn-sepline {
+    display: block;
+    float: left;
+    border-left: 1px solid #9d9d9d;
+    border-top: none;
+    border-right: 1px solid #fff;
+    border-bottom: none;
+    width: 1px;
+    height: 18px;
+    line-height: 14px;
+    padding: 0;
+    margin: 1px 5px 0 4px;
+    background: #9d9d9d;
+    vertical-align: -5px\0;
+    margin: 3px 6px 0 3px;
+}
+
+.message-page {
+    float: right;
+    margin: 16px 10px 0 0;
+}
+
+.message-page a {
+    text-decoration: none;
+}
+
+.read-mail-info {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 1px;
+    padding: 7px 0 7px 0;
+    border-bottom: solid 1px #ccc;
+    background-color:  #f4f4f4;
+}
+
+.info-div table {
+    width: 45%;
+}
+
+.info-div table tbody tr td {
+    padding:2px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+    padding: 2px 2px 2px 15px!important;
+}
+
+.title-span {
+    float: left;
+    margin-right: 8px;
+}
+
+.td-title {
+    text-align: right;
+    color: #999;
+}
+
+.content-div {
+    float: left;
+    width: 97%;
+    position: relative;
+    font-size: 14px;
+    height: auto;
+    padding: 15px 15px 10px 15px;
+    z-index: 1;
+    zoom: 1;
+    line-height: 1.7;
+    background-color: #fff;
+}
+
+.mail-content-container {
+    height: auto;
+    min-height: 450px;
+    _height: 100px;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+}
+
+.tool-bar {
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #9fa8b3;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#f3f3f3),to(#dde2e7));
+}
+
+.unstar {
+    width: 14px;
+    height: 14px;
+    background: url(/images/msg/mail2757b6.png) no-repeat -32px -160px;
+    float: left;
+    display: block;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.star {
+    width: 14px;
+    height: 14px;
+    background: url(/images/msg/mail2757b6.png) -48px -176px no-repeat;
+    float: left;
+    display: block;
+    cursor: pointer;
+}
+
+.non-click {
+    color: #333;
+}
+
+.non-click:hover {
+    color: #333;
+    cursor: default;
+}
+
+.middle-div {
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    background-color: #f4f4f4;
+}
+
+.middle-div-head {
+    float: left;
+    width: 100%;
+    height: 25px;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#f3f3f3),to(#dde2e7));
+}
+
+.process {
+    float: left;
+    margin: 10px;
+}
+
+.flow-op {
+    display: none;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin: 5px 10px 0 0;
+    cursor: pointer;
+}
+
+.down {
+    display: block!important;
+}
+
+.flow-name {
+    text-decoration: none!important;
+}
+
+.flow-name-ul li {
+    padding: 5px;
+}
+
+.flow-details-table {
+    width: 70%;
+}
+
+.flow-details-table tbody tr td {
+    padding: 5px;
+}
+
+.erp-no-title {
+    font-weight: 800;
+}
+
+

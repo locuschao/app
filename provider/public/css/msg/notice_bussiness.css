@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+.searchFilterText {
+    width: 105px;
+}
+.input_text2{
+    width: 150px;
+}
+
+.dialog-edit-alert-tip .edit_business{
+    float: left;
+    width: 50%;
+}
+.dialog-edit-alert-tip .edit_business td input{
+    width: 210px;
+}
+
+.application-rule-div{
+    float: right;
+    width: 50%;
+}
+.application-rule-div table{
+    width: 100%;
+}
+
+/*用户选择框*/
+.search-user-div{
+    float: left;
+    width: 280px;
+    height: 135px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+.search-user-div .search-user-input-div #search-user-name{
+    width: 79%;
+}
+.search-user-div .search-user-input-div #search-user-name-btn{
+    margin-left: 1px;
+}
+.search-user-div #user-tree{
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+/*已选择的用户*/
+.selected-user-div{
+    float: right;
+    width: 260px;
+    height: 145px;
+    border: 1px solid #ccc;
+}
+.selected-user-div .selected-user-haeder{
+    padding: 5px 10px;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    height: 18px;
+}
+.selected-user-div .selected-user-haeder .selected-number-div{
+    float: left;
+}
+.selected-user-div .selected-user-haeder .selected-user-clear{
+    float: right;
+}
+/*已选择用户列表*/
+.selected-user-div .selected-user-list{
+    clear: both;
+}
+
+.btn-div {
+    padding: 5px 0 5px 0;
+}
+.btn-add {
+    float: right;
+}
+
+.rule-bg-div{
+    height: 230px;
+    background-color: #FFF;
+    padding: 5px;
+}
+
+.dialog-edit-alert-tip .table-module .hide_title_tr td{
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+#dialog-edit-alert-tip{
+    background-color: #FFF;
+}
+
+#user-tree{
+    height: 90px;
+    overflow-y: scroll;
+}
+
+#selected-user{
+    height: 105px;
+    overflow-y: scroll;
+}

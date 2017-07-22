@@ -1,0 +1,12 @@
+[production]
+server.dbprefix=""
+;
+resources.multidb.common.adapter = "PDO_MYSQL"
+resources.multidb.common.host = "120.25.246.52"
+resources.multidb.common.username = "provider_dev"
+resources.multidb.common.password = "yTLYpcG6"
+resources.multidb.common.dbname = "provider_dev"
+resources.multidb.common.isdefaulttableadapter = true
+resources.multidb.common.charset = "UTF8"
+resources.multidb.common.profiler = false
+server.dbdebug = false

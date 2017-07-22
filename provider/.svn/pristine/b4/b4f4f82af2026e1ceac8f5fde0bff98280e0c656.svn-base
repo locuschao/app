@@ -1,0 +1,196 @@
+html,
+body {
+  width: 100%;
+  background: #f2f2f3;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p {
+  margin: 0;
+  font: 12px normal;
+}
+input[type=text],
+select {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0 1px #E3E3E3;
+}
+.red {
+  color: #DF4242 !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.clicked {
+  background-color: #19AE88;
+  color: #fff;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.wrapper > .toggle-navbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #414141;
+  z-index: 1000;
+  text-align: center;
+  line-height: 40px;
+}
+.wrapper > .toggle-navbar > .fa {
+  color: #616161;
+  font-size: 24px;
+  transition: all .5s;
+}
+.wrapper > .toggle-navbar.toggle-sidebar > .fa {
+  transform: rotate(180deg);
+}
+.wrapper > .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 55px;
+  background-color: #222;
+}
+.wrapper > .main-header > .header-logo {
+  width: 200px;
+  height: 100%;
+}
+.wrapper > .main-header > .header-logo > img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu {
+  height: 60px;
+  margin-right: 10px;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu.open > a {
+  background-color: transparent;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu.open > a:hover,
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu.open > a:focus {
+  background-color: transparent;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu > a {
+  padding: 20px 10px;
+  color: #fff;
+  position: relative;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu > a:hover,
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu > a:focus {
+  background-color: transparent;
+}
+.wrapper > .main-header > .header-menu > .navbar-nav > .nav-menu > a > .badge {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-color: #E53C37;
+  padding: 1px 4px;
+}
+.wrapper > .main-sidebar {
+  padding-top: 70px;
+  position: fixed;
+  transition: all .5s;
+  left: 0;
+  z-index: 10;
+  width: 220px;
+  height: 100%;
+  background-color: #262626;
+  overflow: hidden;
+}
+.wrapper > .main-sidebar.toggle-sidebar {
+  transform: translateX(-100%);
+}
+.wrapper > .main-sidebar.toggle-sidebar ~ .main-content {
+  padding-left: 0;
+}
+.wrapper > .main-sidebar.toggle-sidebar ~ .main-footer {
+  padding-left: 0;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu {
+  list-style: none;
+  padding-left: 0;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview a {
+  width: 100%;
+  display: inline-block;
+  color: #999;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview a:hover {
+  background-color: #19AE88;
+  color: #fff;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview a:hover,
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview a:visited,
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview a:focus {
+  text-decoration: none;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview > a {
+  padding-left: 40px;
+  line-height: 50px;
+  height: 50px;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview > a > .fa {
+  margin-right: 10px;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview > a > .fa.fa-angle-right {
+  transition: all .5s;
+  font-size: 18px;
+  float: right;
+  margin-top: 17px;
+  margin-right: 18px;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview.active {
+  background-color: #19AE88;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview.active > a {
+  color: #fff;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview.active > a > .fa-angle-right {
+  transform: rotate(90deg);
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview.active > .treeview-menu {
+  display: block;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview > .treeview-menu {
+  display: none;
+  transition: all .5s;
+  width: 100%;
+  text-align: center;
+  background-color: #353535;
+}
+.wrapper > .main-sidebar > .sidebar > .sidebar-menu > .treeview > .treeview-menu a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.wrapper > .main-footer {
+  transition: all .5s;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  color: #6c6c6c;
+  padding-left: 220px;
+  font-size: 12px;
+}
+.wrapper > .main-footer > div {
+  padding-left: 20px;
+}

@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+.blank10 { clear:both; width:auto; height:10px; font-size:1px; overflow:hidden;} /* --- 空白间距 --- */
+
+/* --- 面包屑 --- */
+.breadnav { height:30px; padding-top:5px; }
+
+.guild { border:1px solid #ccc; border-bottom:none; height:30px; background: url(../images/base/bg_guild01.gif) repeat-x; border-radius:5px 5px 0px 0px;}
+.guild h2 { float:left; height:30px; line-height:30px; font-size:12px; font-weight:bold; color:#0090e1; border-radius:5px 0px 0px 0px; background:#fff; padding:0px 20px; border-right:1px solid #ccc;}
+
+.search { padding-bottom:10px; background: url(../images/pack/bg_search01.gif) bottom repeat-x ; }
+
+.goods_property { height:36px; padding:0px 10px; background:#f6f6f6; margin-top:5px;}
+.goods_property_lft { float:left; height:29px; padding-top:7px;}
+
+.manage_form { background:#d1e7fc; border:1px solid #d1e7fc; margin-top:5px;}     
+.manage_form tr {  }
+.manage_form td { line-height:20px; padding:5px; border-right:1px solid #fff; border-bottom:1px solid #fff; vertical-align:top;}
+.manage_form,.manage_form td{  }
+.manage_form_bk { background:#fff; }
+.manage_form_bk2 { background:#f2f2f2;}
+.manage_form_bk3 { background:#fcf5dd;}
+.manage_form_bk4 { background: url(../images/pack/bg_manage_form01.gif) repeat-x; color:#333;}
+
+.manage_form2 { margin-top:10px; }     
+.manage_form2 tr {  }
+.manage_form2 td { line-height:20px; padding:5px; vertical-align:top;}
+
+.manage_form3 { }     
+.manage_form3 tr {  }
+.manage_form3 td { line-height:22px; padding:6px 2px; vertical-align:top;}
+
+.manage_form4 {}     
+.manage_form4 tr {  }
+.manage_form4 td { line-height:22px; padding:3px 2px; vertical-align:top; border-bottom:1px dashed #d9d9d9;}
+.manage_form4,.manage_form4 td{ border-collapse:collapse;}
+.manage_form4 td.line { border-bottom:none;}
+
+.insert_form { }
+.insert_form tr { }
+.insert_form td { text-align:left;padding:2px; border:none; line-height:20px; vertical-align:top; color:#999; }
+
+
+
+.pack_case { line-height:20px; padding:15px 10px; border-bottom:1px dashed #ccc;}
+
+.pack_pic { width:200px; height:150px; border:1px solid #d5e9fc; overflow:hidden;}
+
+.pack_weight { padding:10px; border:1px solid #e2e2e2; margin-top:15px;}
+
+.pack_check { padding:15px 10px 10px 10px; font-size:18px;}
+
+.pack_manager {}
+.pack_manager a { float:left; padding-right:20px; text-decoration:underline; color:#666;}
+.pack_manager a.current { color:#0090e1;}
+
+.pro_list { border:1px solid #d3e6fa; border-radius:2px; box-shadow:2px 2px 3px #f1f8ff inset; padding:2px 8px;}
+
+
+
+/* ----------- 订单明细样式 ------------- */
+.depotState_title { height:32px; line-height:32px; background: url(../images/pack/bg_depotState.gif) repeat-x; padding-left:10px;}
+.depotState { border:1px solid #91bcdf; margin-top:12px;}
+.depotState h2 { height:32px; line-height:32px; background: url(../images/pack/bg_depotState.gif) repeat-x; font-size:14px; font-weight:bold; padding-left:15px;}
+.depotState_list { padding:0px 12px 18px 12px;}
+.depot_path { text-align:right;}
+
+.depotForm { border-bottom:1px dashed #ccc; margin-top:10px; padding-bottom:10px;}
+.depotForm tr {}
+.depotForm td { line-height:22px; padding:2px; }
+
+.depotTab2 { height:32px; background: url(../images/pack/bg_depotState.gif) repeat-x; }
+.depotTab2 ul {}
+.depotTab2 ul li { background:#fff; height:32px; line-height:32px; padding:0px 15px; float:left; font-size:14px; }
+.depotTab2 ul li.chooseTag { height:30px; background:#eaf2f8; border:1px solid #d3e5ef; float:left; padding:0px 15px; font-weight:bold;} 
+.depotTab2 li.chooseTag a { height:30px;}
+.depotTab2 a { color:#333;}
+.depotTab2 a:hover { color:#333; text-decoration:none;}
+
+.depot_locus { border-top:1px dashed #ccc; padding:15px 0px 30px 0px; margin-left:35px;}
+.depot_locus_lft { float:left; font-weight:bold; }
+.depot_locus_rit { float:left; line-height:22px; }
+.depot_locus_rit p.tips { border:1px solid #fae2ba; background:#ffffe0 url(../css/images/master/icon_02.png) no-repeat; background-position:8px 5px; padding:2px 10px 2px 25px;}
+
+
+.guild_drop { float:left; width:20px; height:20px; margin:4px 0px 0px 20px; background: url(../images/pack/bg_guild_drop01.gif) right center no-repeat; cursor:pointer;}
+.guild_drop a { background: url(../images/pack/bg_guild_drop01.gif) right center no-repeat; padding-right:17px; display:block; color:#666;}
+.guild_drop a:hover { background: url(../images/pack/bg_guild_drop02.gif) right center no-repeat; text-decoration:none; text-decoration:none; } 
+
+.guild_drop_list { position:absolute; width:68px; padding:2px; background:#fff; border:1px solid #78b1e8; z-index:10;}
+.guild_drop_list a { width:62px; height:20px; line-height:20px; text-align:left; padding:1px 3px; display:block; color:#666;}
+.guild_drop_list a:hover { background:#d9ebfc; height:20px;  display:block; color:#0090e1;}
+
+.mail_operate { padding:10px; background:#f3f3f3;}
+
+
+
+
+
+.goodsTab { height:28px; background: url(../images/pack/bg_goodsTab01.gif) bottom repeat-x; padding-top:12px;}
+.goodsTab ul {}
+.goodsTab ul li { float:left; background: url(../images/pack/bg_goodsTab03.gif) repeat-x; height:28px;  line-height:28px; border-left:1px solid #d9d9d9; border-right:1px solid #d9d9d9; padding:0px 15px; margin-right:5px; }
+.goodsTab ul li.chooseTag { background: url(../images/pack/bg_goodsTab02.gif) repeat-x; float:left; padding:0px 15px; z-index:5;  } 
+.goodsTab li.chooseTag a { color:#0090e1;}
+.goodsTab a { color:#666;}
+.goodsTab a:hover { color:#488fcd; text-decoration:none;}
+
+.tab_box { padding:12px; border:1px solid #999; border-top:none;}
+
+
+.Tab { height:27px; background:#e4effc; border-bottom:1px solid #90b3ce; margin-top:10px;}
+.Tab ul {}
+.Tab ul li { height:27px; line-height:27px; background: url(../images/pack/bg_tab02.gif) repeat-x; border-left:1px solid #c6c6c6; border-top:1px solid #c6c6c6; border-right:1px solid #c6c6c6; border-bottom:none; padding:0px 15px; float:left; }
+.Tab ul li.chooseTag { height:27px; background: url(../images/pack/bg_tab01.gif) repeat-x; float:left; padding:0px 15px; border:1px solid #91b3ce; border-bottom:none; } 
+.Tab li.chooseTag a { color:#4474b2;}
+.Tab a { color:#666;}
+.Tab a:hover { color:#4474b2; text-decoration:none;}
+
+
+
+
+/* ----------- 类似股票的样式 ------------- */
+.manage_form5 { background:#000; border:1px solid #555; margin-top:5px; font-size:18px;}     
+.manage_form5 tr {  }
+.manage_form5 td { line-height:20px; padding:5px; border-right:1px solid #555; border-bottom:1px solid #555;}
+.manage_form5,.manage_form5 td{  }
+.manage_form5_bk { background:#000; color:#e7f09f; }
+.manage_form5_bk2 { background:#000; color:#1cd41a;}
+.manage_form5_bk3 { background:#555; color:#1cd41a;}
+
+.goodsTab2 { height:28px; background: url(../images/pack/bg_goodsTab01.gif) bottom repeat-x; padding-top:12px; font-size:18px;}
+.goodsTab2 ul {}
+.goodsTab2 ul li { float:left; background:#fef4ea;  line-height:28px; border-left:1px solid #96946d; border-right:1px solid #96946d; padding:0px 15px; margin-right:5px; color:#000;}
+.goodsTab2 ul li.chooseTag { background:#000; float:left; padding:0px 15px; z-index:5; color:#999b9a;  } 
+.goodsTab2 li.chooseTag a { color:#999b9a;}
+.goodsTab2 a { color:#000;}
+.goodsTab2 a:hover { color:#488fcd; text-decoration:none;}
+/* ----------- end ------------- */

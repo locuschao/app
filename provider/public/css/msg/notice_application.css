@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+#dialog-edit-alert-tip{
+    background-color: #FFF;
+}
+
+.dialog-add-app{
+    background-color: #FFFFFF;
+    width: 99%;
+    height: 200px;
+    padding: 5px;
+}
+
+/*编辑应用对话框*/
+.application-edit{
+    float: left;
+    width: 50%;
+}
+
+.application-rule-div{
+    float: right;
+    width: 50%;
+}
+
+.application-rule-div p{
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.application-rule-div table{
+    width: 100%;
+}
+
+
+.searchFilterText{
+    width: 105px;
+}
+
+.input_text2{
+    width: 150px;
+}
+
+.btn-div {
+    padding: 5px 0 5px 0;
+}
+.btn-add {
+    float: right;
+}
+
+.add-application-rule-div{
+    max-height: 130px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.hide_title_tr td{
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+.edit-app-btn, .del-rule-btn{
+    cursor: pointer;
+}

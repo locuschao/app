@@ -1,0 +1,1 @@
+<div style='no-repeat center center;width:470px;height:382px;margin:0 auto;'>    <span style='color:red;font-size:15px;padding-left:65px;line-height:150px;font-weight:bold;'>You Have No Authority To Access This Page...</span></div>

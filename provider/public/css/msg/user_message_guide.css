@@ -1,0 +1,61 @@
+.tab-head {
+	height: 40px;
+}
+
+.tab-ul > li {
+	width: 33%;
+    background: #fff;
+    height: 30px;
+    padding: 7px 0 0 0;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-ul > li.choose-tab {
+	width: 33%;
+	height: 30px;
+    background: #eaf2f8;
+    border: 1px solid #d3e5ef;
+    float: left;
+    padding: 7px 0 0 0;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.content {
+	display: none;
+}
+
+.warning {
+	height: 30px;
+	width: 99%;
+	margin-top: 13px;
+	padding: 10px 0 0 10px;
+	background: rgba(255, 246, 136, 0.44);
+}
+
+.warning-title {
+	font-weight: 800;
+    color: #e66;
+}
+
+.guide > span {
+	display: block;
+	padding: 10px 0 10px 20px;
+}
+
+.guide > img {
+	margin-left:50px;
+}
+
+.picture-num {
+	padding-left: 260px!important;
+}
+
+.firefox > img {
+	display: block;
+	margin: 20px 0 35px 25px;
+}

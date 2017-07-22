@@ -1,0 +1,237 @@
+/* 公共样式--开始 */
+.left {
+    float: left;
+}
+.wb8 {
+    width: 8%;
+}
+.wb16 {
+    width: 16%;
+}
+.tx-cen {
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+.posr {
+    position: relative;
+}
+.step_div {
+	border:1px solid #D9D9D9;
+	/*
+	margin-top: 10px;
+	*/
+}
+
+.step_div p{
+	cursor: pointer;
+}
+/* 公共样式--结束 */
+
+
+/* 控制进度的样式--开始 */
+.t_start_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -622px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_start_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_process_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -346px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_process_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -69px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_end_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -415px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_end_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -484px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_process_unnode_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll right -208px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_process_unnode_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_node_trun_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -139px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_node_trun_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -1245px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_node_trun_2 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -1176px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+
+.t_turn_right_start_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -691px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+
+.t_turn_right_start_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -759px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+
+.t_turn_right_end_0 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -825px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+
+.t_turn_right_end_1 {
+	background: url("/images/sidebar/step.png") no-repeat scroll center -886px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+/* 控制进度的样式--结束 */
+
+
+.t37 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t38 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -69px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t39 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -139px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t40 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -208px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t41 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -277px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t124 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -346px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t125 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -415px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t126 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -484px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t191 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -553px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t192 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -622px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t193 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -691px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+.t194 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -759px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+.t195 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -825px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+.t196 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -886px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 49px;
+    width: 100%;
+}
+.t200 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -968px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+.t201 {
+    background: url("/images/sidebar/step.png") no-repeat scroll center -1037px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+}
+

@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ----------- global html css ------------- */
+body{ margin:0px; padding:0px; color:#666; font-size:12px; background:#fff; font-family:Arial, Helvetica, sans-serif;}
+p,h1,h2,h3,h4,h5,span,table,tr,td,div,dl,dl dd,ul,ul li {
+	margin:0px;
+	padding:0px;
+}
+ul{list-style:none;}
+img{border: 0px;}
+button,input,select,textarea,form, { margin:0px;padding:0px; font-size:12px; color:#666;}
+a{color:#0090e1;text-decoration:none;}
+a:hover{color:#0090e1; text-decoration:underline;}
+/* ----------- end ------------- */
+
+
+
+/* ----------- html layout css ------------- */
+#col { width:100%; min-width:1200px; margin-top:2px;}
+.main { float:left; width:84%;}
+.main2 { width:auto; height:auto; margin:0px 20px;}
+
+.main_area { padding:0px 5px; border:1px solid #ccc; border-top:none; padding-bottom:20px; border-radius:0px 0px 5px 5px; }
+
+/* --- 分页的样式 --- */
+.page { text-align:right; margin-top:12px; height:26px; }
+.page_lft { float:left; height:26px; line-height:26px;}
+.page_rit { float:right; text-align:right; height:26px; padding:3px 0px; cursor:pointer;}
+.page_number { border:1px solid #ccc; height:20px; line-height:20px; margin-left:5px; padding:2px 7px; color:#666;}
+.page_over { border:1px solid #a5c3e0; text-decoration:none; color:#488fcd; background:#f6fbff;}
+.page_current { border:1px solid #0090e1; color:#3a739d; height:20px; line-height:20px; margin-left:5px; padding:2px 7px; cursor:pointer;}
+.page_disable { border:1px solid #ddd; color:#ddd; height:20px; line-height:20px; margin-left:5px; padding:2px 7px; cursor:pointer;}
+
+.shrink { float:left; width:8px; height:225px;}
+.shrink_bg1 { float:left; width:8px; height:82px; margin-top:200px; background:  url(../images/base/bg_shrink01.gif) no-repeat; cursor:pointer;}
+.shrink_bg2 { float:left; width:8px; height:82px; margin-top:200px; background:url(../css/images/vertical/bg_shrink02.gif) no-repeat; cursor:pointer;}
+/* ----------- end ------------- */
+
+
+
+/* ----------- public css ------------- */
+.clr { clear:both; width:0px; height:0px; line-height:0px; font-size:0px;} /* --- 清楚浮动的样式 --- */
+
+/* --- 字体颜色及文字对齐的方式 --- */
+.word_red { color:#d92b3f;}
+.word_green { color:#18b301;}
+.word_gray { color:#999;}
+.word_black { color:#222;}
+.word_orange { color:#fa7638;}
+.word_right { text-align:right;}
+.blue_line { color:#0090e1; text-decoration:underline;}
+
+/* --- 按钮的样式 --- */
+.baseBtn { height:24px; line-height:24px; background: url(../images/base/bg_baseBtn01.gif)  bottom repeat-x; border:1px solid #979797; border-radius:3px; padding:0px 10px; text-align:center; color:#333; cursor:pointer;}
+
+/* --- 表单输入框的样式 --- */
+.input_text { width:140px; height:22px; line-height:22px; border:1px solid #a5c3e0; border-top:1px solid #89accd; border-right:1px solid #89accd; padding:0px 3px; border-radius:3px; box-shadow:1px 2px 2px #e5eaee inset; font-size:12px; }
+.input_text2 { height:22px; line-height:22px;border:#bdd3ea 1px solid; padding:0px 0px 0px 3px;}
+/* ----------- end ------------- */
+
+
+
+

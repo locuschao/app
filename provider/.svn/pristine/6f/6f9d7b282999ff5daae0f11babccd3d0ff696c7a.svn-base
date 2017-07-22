@@ -1,0 +1,676 @@
+/* common */
+.fpx-label-bold {
+	font-weight: bold;
+}
+.fpx-label-font-common {
+	font-size: 9px;
+}
+.fpx-label-padding-common {
+	padding-right: 5px;
+}
+.fpx-label-buyerid {
+	width: 65px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-wrap: normal;
+}
+/* 回邮地址 */
+.fpx-label-return-address {
+	width: 95px;
+	font-size: 8px;
+	line-height: 9px;
+	font-style: italic;
+}
+.fpx-label-hnxb-return-address {
+	font-size: 10px;
+	font-weight: bold;
+}
+/* 计费分区 */
+.fpx-label-charge-zone {
+	width: 25px;
+	height: 83px;
+	line-height: 80px;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+/*  logo */
+.fpx-label-sg-logo, .fpx-label-lyt-logo {
+	width: 152px;
+	height: 76px;
+}
+.fpx-label-lyt-gb-logo {
+	width: 180px;
+	height: 60px;
+}
+.fpx-label-lytAULogo {
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	padding: 0 5px;
+	border: 1px solid black;
+}
+.fpx-label-lytgh-de-sign {
+	font-weight: bold;
+	text-align: right;
+}
+.fpx-label-chpost-logo {
+	width: 68px;
+	height: 24px;
+}
+.fpx-label-lytIcon {
+	font-size: 20px;
+	font-weight: bold;
+}
+/* 航空标识 */
+.fpx-label-ch-air-sign {
+	font-size: 7px;
+	font-weight: bold;
+	text-align: center;
+	padding: 0 20px;
+}
+.fpx-label-fjgh-air-sign {
+	font-size: 8px;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid black;
+	padding: 2px;
+}
+/* 收件人信息 */
+.fpx-label-consignee-info, .fpx-label-lyt-consignee-info {
+	width: 200px;
+	line-height: 12px;
+	font-size: 12px;
+	max-height: 125px;
+}
+.fpx-label-consignee-name {
+	word-break: break-all;
+	font-size: 13px;
+	line-height: 13px;
+}
+.fpx-label-consignee-info-bigger,
+.fpx-label-consignee-info-bigger .fpx-label-hnxb-consignee-address,
+.fpx-label-consignee-info-bigger .fpx-label-consignee-info,
+.fpx-label-consignee-info-bigger .fpx-label-lyt-consignee-info {
+	line-height: 15px;
+	font-size: 14px;
+}
+.fpx-label-consignee-info-bigger .fpx-label-hnxb-consignee-address {
+	padding: 0px 0 10px 10px;
+}
+.fpx-label-consignee-postcode {
+	padding: 5px;
+}
+.fpx-label-lyt-consignee-info .fpx-label-consignee-address .fpx-label-bold {
+	float: left;
+	padding-left: 14px;
+}
+.fpx-label-lyt-consignee-info .fpx-label-address {
+	float: left;
+	width: 150px;
+	padding-left: 7px;
+}
+.fpx-label-lyt-consignee-info .fpx-label-consignee-phone
+,.fpx-label-lyt-consignee-info .fpx-label-consignee-country {
+	padding-left: 42px;
+	float: left;
+	width: 150px;
+}
+.fpx-label-dhlpacketplus-consignee-info {
+	width: 270px;
+	font-size: 12px;
+	line-height: 14px;
+	padding: 5px 0 0;
+	font-family: Arial, Tahoma, 'Times New Roman', '微软雅黑', 'Arial Unicode MS'
+}
+/* 中国邮政收件人信息  */
+.fpx-label-hnxb-consignee-info {
+	
+}
+.fpx-label-hnxb-consignee-to {
+	float: left;
+}
+.fpx-label-hnxb-consignee-address {
+	float: left;
+	width: 210px;
+	padding: 3px 0 10px 10px;
+	font-size: 12px;
+	line-height: 12px;
+	max-height: 95px;
+}
+.fpx-label-hnxb-consignee-phone {
+	padding: 0 25px 0 5px;
+}
+.fpx-label-hnxb-consignee-postcode {
+	padding: 0 0 0 5px;
+}
+.fpx-label-hnxbCountry {
+	width: 86px;
+	text-align: right;
+}
+/* 中国邮政寄件人信息 */
+.fpx-label-customer-info {
+	font-size: 10px;
+	line-height: 11px;
+}
+.fpx-label-customer-info-from-div {
+	overflow: hidden;
+}
+.fpx-label-customer-info-from,
+.fpx-label-customer-info-from-addr {
+	float: left;
+}
+.fpx-label-customer-info-from-addr {
+	width: 235px;
+}
+/* 分拣分区 */
+.fpx-label-pickup-zone {
+	width: 54px;
+	border: 1px solid black;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 2px;
+}
+.fpx-label-pickup-zone-air {
+	font-size: 6px;
+	border-bottom: 1px solid black;
+	padding: 2px;
+}
+.fpx-label-pickup-zone-zone {
+	font-size: 10px;
+	border-bottom: 1px solid black;
+}
+.fpx-label-pickup-zone-code {
+	font-size: 18px;
+	font-weight: bold;
+}
+.fpx-label-pickup-zone-code-bjxb {
+	padding-left: 15px;
+}
+.fpx-label-pickup-end {
+	display: none; /* 目前只有几个标签需要这样 */
+	text-align: center;
+}
+/* returnSign & insuranceSign */
+.fpx-label-returnSign-insuranceSign {
+	overflow: hidden;
+}
+.fpx-label-insurance-sign, .fpx-label-return-sign, .fpx-label-gjz-sign {
+	width: 27px;
+	height: 23px;
+	float: right;
+}
+/* .fpx-label-insurance-sign {
+	background: url(../imgs/insurance.jpg) center center no-repeat;
+	background-size: 27px 23px;
+}
+.fpx-label-return-sign {
+	background: url(../imgs/return.gif) center center no-repeat;
+	background-size: 27px 23px;
+} */
+/* trackingno & barcode */
+.fpx-label-tracking-no {
+	font-size: 14px;
+	font-weight: bold;
+}
+.fpx-label-barcode {
+	padding-top: 3px;
+	width: 250px;
+	text-align: center;
+}
+.fpx-label-barcode img {
+	/*width: 210px;
+	height: 39px;*/
+}
+.fpx-label-gh-sign {
+	padding-left: 5px;
+	font-size: 24px;
+	font-weight: bold;
+}
+/* product eshortname */
+.fpx-label-product-eshortname {
+	width: 50px;
+}
+/* 国家二字码 */
+.fpx-label-countryCode, .fpx-label-productCname {
+	font-weight: bold;
+	text-align: right;
+}
+.fpx-label-countryCode{
+	font-size: 24px;
+}
+.fpx-label-productCname {
+	font-size: 18px;
+}
+/* 4px account */
+.fpx-label-account-4px {
+	font-weight: bold;
+	font-size: 10px;
+	width: 220px;
+	line-height: 11px;
+}
+.fpx-label-account-4px-chgz {
+	font-size: 24px;
+	font-weight: bold;
+}
+/* 把选择打印的内容隐藏 */
+.fpx-label-printcontent {
+	display: none;
+}
+.fpx-label-printcontent-show {
+	display: block;
+}
+/* 香港小包产品标识 */
+.fpx-label-hkSign-container {
+	border: 1px solid black;
+	overflow: hidden;
+	text-align: center;
+	font-size: 10px;
+	margin-bottom: 15px;
+}
+.fpx-label-hkSign-container div {
+	float: left;
+	padding: 0 3px;
+}
+.fpx-label-hkSign-col1 {
+	height: 35px;
+	line-height: 35px;
+}
+.fpx-label-hkSign-col2 {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+/* 香港小包airsign productCname sign */
+.fpx-label-hkxbAirSign-container {
+	margin-right: 1px;
+	text-align: center;
+	width: 110px;
+	overflow: hidden;
+}
+.fpx-label-hkGhSign,
+.fpx-label-hkAirSign,
+.fpx-label-hkProductCname {
+	border: 1px solid black;
+}
+.fpx-label-hkGhAirSign .fpx-label-hkProductCname {
+	border-bottom: none;
+}
+.fpx-label-hkGhAirSign .fpx-label-hkAirSign {
+	padding-top: 3px;
+}
+.fpx-label-hkProductCname {
+	font-weight: normal;
+}
+.fpx-label-hkGhSign,
+.fpx-label-hkGhAirSign .fpx-label-hkAirSign,
+.fpx-label-hkGhAirSign .fpx-label-hkProductCname {
+	font-size: 6px;
+}
+.fpx-label-hkPyAirSign .fpx-label-hkAirSign,
+.fpx-label-hkPyAirSign .fpx-label-hkProductCname {
+	font-size: 6px;
+}
+.fpx-label-hkGhSign{
+	height: 15px;
+}
+.fpx-label-hkAirSign {
+	height: 23px;
+	padding-top: 2px;
+	width: 70px;
+	float: left;
+	border-left: none;
+}
+.fpx-label-hkGhAirSign .fpx-label-hkProductCname {
+	height: 10px;
+}
+.fpx-label-hkPyAirSign .fpx-label-hkAirSignLeft {
+	float: left;
+	height: 25px;
+	line-height: 25px;
+}
+.fpx-label-hkGhAirSign .fpx-label-hkAirSignLeft {
+	float: left;
+}
+.fpx-label-hkReturnSign .fpx-label-insurance-sign,
+.fpx-label-hkInsuranceSign .fpx-label-return-sign {
+	display: none;
+}
+/* 香港小包挂号 投保易 */
+.fpx-label-hkxb-tby {
+	font-size: 8px;
+}
+/* lyt平邮转yodel标识 */
+.fpx-label-lytYodel-sign {
+	font-size: 25px;
+	font-weight: bold;
+	text-align: right;
+}
+
+/* -------------------- 配货单样式  ------------------------*/
+.fpx-peihuolist-title {
+	font-size: 14px;
+}
+.fpx-peihuolist {
+	font-size: 12px;
+}
+.fpx-peihuolist-orderInfo {
+	font-size: 12px;
+	padding: 0 10px;
+}
+.fpx-peihuolist-num,
+.fpx-peihuolist-count,
+.fpx-peihuolist-unitPrice,
+.fpx-peihuolist-totalPrice {
+	width: 27px;
+}
+.fpx-peihuolist-num,
+.fpx-peihuolist-count,
+.fpx-peihuolist-unitPrice,
+.fpx-peihuolist-totalPrice,
+.fpx-peihuolist-info {
+	padding: 0 5px 5px 0;
+}
+.fpx-peihuolist-info {
+	width: 135px;
+}
+.fpx-peihuolist-barcode {
+	width: 230px;
+	height: 45px;
+	display: none;
+}
+.fpx-peihuolist-barcode-state {
+	display: none;
+	font-size: 12px;
+}
+.fpx-peihuolist-barcode-state-show {
+	display: inline-block;
+}
+.fpx-peihuolist-barcode-show {
+	display: block;
+	margin: 0 auto;
+}
+/* -------------------- 报关单样式 --------------------- */
+.fpx-declaration-frame .fpx-label-frame-main {
+	padding: 1px 0;
+}
+.fpx-declaration-main {
+	border: 1px solid black;
+}
+.fpx-declaration-sign {
+	font-size: 11px;
+}
+.fpx-declaration-frame {
+	font-size: 10px;
+}
+.fpx-declaration-title {
+	text-align: center;
+	width: 150px;
+}
+.fpx-declaration-row2-infoc {
+	font-size: 10px;
+	padding: 3px;
+}
+.fpx-declaration-row2-infoe {
+	font-size: 14px;
+	padding: 2px 0;
+	line-height: 11px;
+}
+.fpx-declaration-row2-infoe2 {
+	font-size: 10px;
+}
+.fpx-declaration-category-title,
+.fpx-declaration-category-col1,
+.fpx-declaration-category-col2 {
+	font-size: 12px;
+}
+.fpx-declaration-category-title {
+	width: 54px;
+	padding: 3px;
+	line-height: 13px;
+}
+.fpx-declaration-category-col1 {
+	width: 83px;
+}
+.fpx-declaration-category-col1,
+.fpx-declaration-category-col2 {
+	padding: 5px 1px;
+}
+.fpx-declaration-info {
+	width: 185px;
+	padding: 3px;
+	line-height: 10px;
+}
+.fpx-declaration-weight,
+.fpx-declaration-price {
+	width: 38px;
+	padding: 3px;
+	line-height: 11px;
+}
+.fpx-declaration-guarantee {
+	font-size: 8px;
+	padding: 3px;
+}
+/* other 报关单 */
+.fpx-declaration-name {
+/* 	width: 80px; */
+	font-size: 14px;
+}
+.fpx-declaration-category-prompt {
+	font-size: 10px;
+	font-style: italic;
+}
+.fpx-declaration-container,
+.fpx-peihuolist-container {
+	display: none;
+}
+.fpx-peihuolist-container-show,
+.fpx-declaration-container-show {
+	display: block;
+}
+.fpx-label-label .fpx-declaration-container-blank {
+	display: none;
+}
+/*北京小包选中变X的样式*/
+.checked-x:checked {
+	/* position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0; */
+/* 	display: none; */
+}
+.checked-x + label img {
+	height: 15px;
+	width: 13px;
+	display: none;
+	float: left;
+}
+.checked-x {
+	display: none !important;
+}
+/* .checked-x-input {
+	display: none !important;
+} */
+.checked-x + label .checked-img,
+.checked-x + label .input-img {
+	display: block;
+}
+.checked-x:checked + label img {
+	/* height: 15px;
+	width: 13px;
+	display: block;
+	float: left; */
+}
+/* dhl 小包挂号报关单样式 */
+.fpx-declaration-dhlpp {
+	font-size: 10px;
+	font-family: Arial, Tahoma, 'Times New Roman', '微软雅黑', 'Arial Unicode MS'
+}
+.fpx-declaration-dhlpp-bigfont {
+	font-size: 12px;
+	text-align: center;
+	padding-top: 2px;
+}
+.fpx-declaration-dhlpp .fpx-declaration-category-col1 {
+	width: 100px;
+}
+.fpx-declaration-dhlpp .fpx-declaration-category-col1,
+.fpx-declaration-dhlpp .fpx-declaration-category-col2 {
+	font-size: 10px;
+}
+.fpx-declaration-dhlpp-category {
+	height: 15px;
+	line-height: 15px;
+}
+.fpx-declaration-dhlpp .fpx-declaration-weight, 
+.fpx-declaration-dhlpp .fpx-declaration-price
+{
+	width: 75px;
+}
+.fpx-declaration-dhlpp .fpx-declaration-weight, 
+.fpx-declaration-dhlpp .fpx-declaration-price,
+.fpx-declaration-customerCtcode {
+	height: 30px;
+	line-height: 13px;
+}
+.fpx-declaration-customerCtcode {
+	width: 100px;
+	padding: 3px;
+}
+.fpx-declaration-dhlpp .fpx-declaration-guarantee {
+	padding: 3px;
+}
+.fpx-declaration-customerNoBarcode {
+	padding: 2px 0;
+}
+/* 芬兰邮政小包 元素样式 */
+.fpx-label-finlandSign-container {
+	font-size: 12px;
+	width: 190px;
+}
+.fpx-label-finland-logo-container {
+	width: 80px;
+	text-align: center;
+	font-size: 10px;
+	line-height: 11px;
+}
+.fpx-label-finland-logo-content {
+	border: 1px solid black;
+	padding: 3px 0;
+}
+.fpx-label-finland-logo-priority {
+	background-color: black;
+	color: #fff;
+	margin-top: 3px;
+	padding: 3px 0;
+}
+.fpx-label-finland-customerInfo-container{
+	width: 190px;
+	font-weight: bold;
+}
+.fpx-label-finland-consigneeInfo-container {
+	width: 200px;
+	font-weight: bold;
+}
+.fpx-label-finland-customerInfo-container {
+	font-size: 8px;
+}
+.fpx-label-finland-consigneeInfo-container {
+	font-size: 10px;
+	line-height: 11px;
+	min-height: 70px;
+}
+.fpx-label-finland-consigneeInfo-item {
+	overflow: hidden;
+}
+.fpx-label-finland-customerInfo-desc,
+.fpx-label-finland-consigneeInfo-desc,
+.fpx-label-finland-customerInfo,
+.fpx-label-finland-consigneeInfo {
+	float: left;
+	padding: 0 1px;
+}
+.fpx-label-finland-consigneeInfo {
+	width: 145px;
+	word-break: break-all;
+}
+.fpx-label-finland-consigneeInfo-address,
+.fpx-label-finland-consigneeInfo-zip,
+.fpx-label-finland-consigneeInfo-tel {
+	font-weight: normal;
+}
+.fpx-label-finland-consigneeInfo-country {
+	line-height: 14px;
+}
+.fpx-label-finland-customerInfo {
+	font-size: 8px;
+	line-height: 9px;
+	font-weight: normal;
+}
+/* 重量和日期 */
+.fpx-label-finland-dateAndWeight-container {
+	width: 70px;
+	font-size: 10px;
+}
+.fpx-label-finland-date-container {
+	border-bottom: 1px solid black;
+}
+.fpx-label-finland-date-container,
+.fpx-label-finland-weight-container {
+	border-left: 1px solid black;
+	padding: 0 2px;
+}
+.fpx-label-finland-date,
+.fpx-label-finland-weight {
+	font-weight: bold;
+}
+/* 附加信息 */
+.fpx-label-finlandCondition-container {
+	width: 270px;
+	font-size: 10px;
+	border: 1px solid black;
+	border-right: none;
+	overflow: hidden;
+	line-height: 11px;
+}
+.fpx-label-finlandCondition-content-input,
+.fpx-label-finlandCondition-content-label {
+	float: left;
+}
+.fpx-label-finlandCondition-content-label {
+	padding-left: 5px;
+}
+.fpx-label-finlandCondition-content-input {
+	border: 1px solid black;
+	border-left: none;
+	border-bottom: none;
+	width: 21px;
+	height: 21px;
+}
+/*dhl 小包 ppi*/
+.fpx-dhlpacketplus-ppi {
+	width: 59mm;
+	height: 24mm;
+}
+.fpx-label-dhlpacketplus-recommande {
+	padding-left: 10px;
+}
+.fpx-lable-dhlpacketplus-name {
+	font-size: 12px;
+}
+/* 欧洲小包特惠 */
+.fpx-europe-sign {
+/* 	width: 25px; */
+	height: 83px;
+	line-height: 80px;
+	vertical-align: middle;
+	text-align: center;
+}
+.fpx-europe-sign img {
+	width: 28px;
+	height: 28px;
+}

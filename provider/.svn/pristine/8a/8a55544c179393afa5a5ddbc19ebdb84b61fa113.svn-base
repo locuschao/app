@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+#head { width:100%; min-width:1200px; height:32px; background:#5f789c;}
+
+.headProduct { z-index:100;position:absolute; top:-2px; left:10px; float:left; width:131px; height:29px; line-height:29px; padding:0px 10px; background: url(/images/head/bg_headProduct01.png) no-repeat; cursor:pointer; color:#fff; font-weight:bold;
+font-size: 14px;
+}
+.headPro_drop { position:absolute; left:0px; top:28px; width:145px; padding:2px; background:#fff; border:1px solid #286daf; z-index:100;}
+.headPro_drop a { width:127px; height:20px; line-height:20px; text-align:left; padding:1px 3px 1px 15px; display:block; color:#666;}
+.headPro_drop a:hover { background:#d9ebfc; height:20px;  display:block; color:#0090e1; text-decoration:none;}
+
+.headNav { position:absolute; width:80%; float:left; height:30px; left:165px;min-width: 1000px;z-index: 2}
+.headNav a { color:#fff;}
+.headNav ul {}
+.headNav ul li { width:auto;float:left; color:#fff; height:30px; line-height:30px; text-align:center; background:url(/images/head/bg_nav04.gif) right no-repeat;
+font-size: 14px;
+}
+.headNav ul li a {  height:34px;  display:block;padding-left: 10px;padding-right: 10px;}
+.headNav ul li a:hover {  background:url(/images/head/bg_nav03.gif) right no-repeat!important; height:34px; display:block; color:#0090e1; text-decoration:none;}
+.headNav ul li.current {  background: url(/images/head/bg_nav03.gif) no-repeat; border-radius:2px; }
+.headNav ul li.current a { color:#0090e1;}
+
+.headNavA {  background:url(/images/head/bg_nav03.gif) right no-repeat!important; height:34px;color:#0090E1; text-decoration:none;}
+
+.topMenu { position:absolute; width:260px; padding:5px; background:#f3f3f3; border:1px solid #7d96ba;  border-radius:5px; box-shadow:0px 0px 4px #7d96ba; top:32px; left:0px; z-index:20;}
+.topMenu ul { width:260px; }
+.topMenu ul.noline { border-bottom:none;}
+.topMenu ul li {text-align:left; float:left; width:110px; height:26px; line-height:26px; padding:0px 10px; overflow:hidden;
+font-size: 13.5px;
+}
+.topMenu ul li.noline { background:none;}
+.topMenu ul li.title{  background:url(/images/sidebar/icon2.png) 3px 3px  no-repeat;padding-left:20px;;padding-right:0px;
+font-size: 12px;
+}
+.topMenu ul li a { color:#333;padding-left:0px;padding-right:0px;
+}
+.topMenu ul li a:hover { color:#0090e1!important; color:#0090e1; background:none!important;}
+.topMenu_cover { position:absolute; width:100%; height:9px; background:#f3f3f3; z-index:50; margin-top:-10px; margin-left:-5px;}
+.topMenu span{color:#333333;font-weight:bold;}
+#column {position:relative; width:100%; height:65px; margin-bottom:5px;min-width: 1200px;}
+
+.logo2 { float:left; width:135px; height:50px; background: url(/images/head/logo.png) no-repeat; background-position:20px 15px; cursor:pointer;}
+
+.nav2 { float:left; width:840px; height:52px; margin-left:25px; padding-top:3px; z-index:2; font-size: 11px;}
+.nav2 a { color:#666;}
+.nav2 a:hover { color:#0090e1; text-decoration:none;}
+.nav2 dl { float:left; width:61px; height:44px; background: url(/images/head/bg_nav01.gif) right bottom no-repeat; padding:4px 20px;}
+.nav2 dl dt { }
+.nav2 dl dt img { width:25px;height: 25px;display: none;}
+.nav2 dl dd { width:60px; height:55px; line-height:45px;  text-align:center; padding-top:1px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+font-size:14px;
+}
+.nav2 dl a { border:none;text-align: center}
+.nav2 dl a:hover,.nav2 dl a.current {display:block; border:none;}
+.nav2 dl a:-webkit-any-link{display:block;}
+
+.main_quit { position:absolute; width:260px; float:right; height:44px; padding-top:27px; text-align:right; right:20px; top:27px;}
+.main_quit a { color:#666;}
+.main_quit a:hover { color:#666;}

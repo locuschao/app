@@ -1,0 +1,43 @@
+.sys_help{
+    border-radius: 5px 0 0 0;
+    border-right: 1px solid #CCCCCC;
+    color: #0090E1;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 29px;
+    line-height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size:15px;
+    float:right;
+    display: block;
+}
+#stateContent h3{
+	padding-left: 5px;
+	padding-bottom: 2px;
+}
+#stateContent p{
+	padding-left: 15px;
+	padding-bottom: 2px;
+}
+#stateContent img{
+	border: 1px solid #5DB6D4;
+}
+.noExist {
+width: 700px;
+padding-left: 26%;
+margin: 100px 0px 100px 0px;
+}
+.noExist_pic {
+float: left;
+}
+.noExist_text {
+float: left;
+font-size: 26px;
+padding-left: 20px;
+padding-top: 20px;
+line-height: 36px;
+font-family: "Microsoft YaHei",'微软雅黑','Simsun',Verdana,Arial,Helvetica,sans-serif;
+color: #666;
+}

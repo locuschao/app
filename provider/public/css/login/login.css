@@ -1,0 +1,182 @@
+.user_icon,
+.psd_icon,
+.psd_key {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 14px;
+  background: url(../../../images/login/login_sprite.png) no-repeat;
+}
+.user_icon {
+  left: 10px;
+  background-position: 0 -83px;
+}
+.psd_icon {
+  left: 10px;
+  background-position: 0 -116px;
+}
+.psd_key {
+  right: 10px;
+  background-position: 0 -149px;
+}
+.login-wrapper {
+  width: 100%;
+  position: relative;
+  background: url(../../../images/login/bg.png) 0 -130px no-repeat;
+  -webkit-background-size: cover ;
+  background-size: cover ;
+  padding-bottom: 200px;
+}
+.login-wrapper .header {
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  padding-top: 40px;
+}
+@media screen and (max-width: 1600px) {
+  .login-wrapper .header {
+    height: 700px;
+  }
+}
+.login-wrapper .header > .logo {
+  margin: 0 auto 10px;
+  width: 180px;
+  height: 55px;
+  background: url(../../../images/login/login_sprite.png) 0 0 no-repeat;
+}
+.login-wrapper .header > p {
+  font-size: 16px;
+  color: #fff;
+}
+.login-wrapper .header > form {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 400px;
+  height: 480px;
+  margin: 20px auto;
+  padding: 25px 42px;
+}
+.login-wrapper .header > form > h4 {
+  font-size: 16px;
+  text-align: left;
+  padding: 22px 0;
+  border-bottom: 1px solid #19AE88;
+  margin-bottom: 35px;
+}
+.login-wrapper .header > form > h4 > small {
+  font-size: 14px;
+  color: #C9C9C9;
+}
+.login-wrapper .header > form > #username,
+.login-wrapper .header > form #password {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+.login-wrapper .header > form > #username > input,
+.login-wrapper .header > form #password > input {
+  height: 50px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  padding-left: 35px;
+  width: 100%;
+}
+.login-wrapper .header > form > #username > .fa,
+.login-wrapper .header > form #password > .fa {
+  position: absolute;
+  left: 10px;
+  top: 19px;
+}
+.login-wrapper .header > form > #username {
+  margin-bottom: 30px;
+}
+.login-wrapper .header > form > #password > input {
+  padding-right: 40px;
+}
+.login-wrapper .header > form > .forgetPsd {
+  text-align: right;
+  margin-top: 18px;
+}
+.login-wrapper .header > form > .forgetPsd > a {
+  color: #666;
+}
+.login-wrapper .header > form > .forgetPsd > a:hover {
+  text-decoration: none;
+}
+.login-wrapper .header > form > input[type=submit] {
+  width: 100%;
+  height: 50px;
+  background-color: #19AE88;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 30px;
+  margin-bottom: 37px;
+}
+.login-wrapper .header > form > p > a {
+  color: #19AE88;
+}
+.login-wrapper .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #262626;
+  height: 200px;
+  width: 100%;
+}
+.login-wrapper .footer > .footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  height: 200px;
+  color: #666;
+  font-size: 14px;
+}
+.login-wrapper .footer > .footer-inner a {
+  color: #666;
+}
+.login-wrapper .footer > .footer-inner > .footer-top {
+  border-bottom: 1px solid #333;
+  padding: 40px 10px;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul > li {
+  float: left;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul > li + li {
+  margin-left: 70px;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul.pull-right {
+  font-size: 18px;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul.pull-right > li + li {
+  margin-left: 45px;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul.pull-right > li > a {
+  position: relative;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul.pull-right > li > a > .erweima {
+  width: 106px;
+  height: 106px;
+  position: absolute;
+  border: 3px solid #fff;
+  border-radius: 6px;
+  bottom: 35px;
+  left: -48px;
+  background: url(../../../images/login/login_sprite.png) -60px -74px no-repeat;
+}
+.login-wrapper .footer > .footer-inner > .footer-top > ul.pull-right > li > a > .erweima:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+  bottom: -22px;
+  left: 46px;
+}
+.login-wrapper .footer > .footer-inner > .footer-bottom {
+  padding: 35px 10px;
+  font-size: 12px;
+}

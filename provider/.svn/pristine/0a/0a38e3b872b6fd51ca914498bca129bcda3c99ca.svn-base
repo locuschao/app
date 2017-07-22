@@ -1,0 +1,190 @@
+.main-content {
+  width: 100%;
+  padding-top: 55px;
+  padding-bottom: 50px;
+  background-color: #F1F1F1;
+  padding-left: 220px;
+  transition: all .5s;
+}
+.toggle-sidebar {
+    padding-left: 0;
+}
+.main-content > .main-right > .content-tabs {
+  border-radius: 0;
+  border-bottom: 1px solid #DFE0E4;
+  height: 36px;
+  background: #f5f6f8;
+  color: #454b49;
+}
+.main-content > .main-right > .content-tabs > h2 {
+  float: left;
+  background-color: #fff;
+  border-color: #DFE0E4;
+  border: 1px solid #DFE0E4;
+  height: 36px;
+  padding: 8px;
+}
+
+.main-content > .main-right > .content-tabs > h3 {
+  float: left;
+}
+.main-content > .main-right > .content-tabs > h2 > span {
+    line-height: 15px;
+}
+.main-content > .main-right > .content-tabs > h2 > a {
+    width: 75px;
+    font-size: 12px;
+    color: #000;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #fff;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .content-tabs-ul > .tabs-group + .tabs-group {
+  margin-left: -1px;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .content-tabs-ul > .tabs-group > .tabs-header {
+  width: 75px;
+  height: 34px;
+  line-height: 22px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 0;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .content-tabs-ul > .tabs-group > .tabs-close {
+  height: 34px;
+  line-height: 22px;
+  border-radius: 0;
+  font-size: 14px;
+  border-left: 1px solid #DFE0E4;
+  background-color: #fff;
+  color: #B5B5B5;
+  padding: 6px 9px;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .breadcrumb {
+  float: right;
+  background-color: transparent;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .breadcrumb > li {
+  font-size: 12px;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .breadcrumb > li > a {
+  color: #454b49;
+  text-decoration: none;
+}
+.wrapper > .main-content > .main-right > .content-tabs > .breadcrumb > li > .fa {
+  margin-right: 10px;
+}
+.wrapper > .main-content > .main-right > .content-section {
+  padding: 20px 20px 10px 15px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  color: #313d39;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > h3 {
+  font-size: 16px;
+  border-bottom: 1px solid #DFE0E4;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 28px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > h3:before {
+  content: '';
+  width: 3px;
+  height: 18px;
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  background-color: #19AE88;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form {
+  padding: 12px 20px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > label {
+  font-size: 14px;
+  margin-left: 65px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > label.first-label {
+  margin-left: 0;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > .labels-group {
+  font-size: 0;
+  height: 30px;
+  line-height: 29px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > .labels-group > .button {
+  border-right: 1px solid #ddd;
+  padding: 7.5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > .labels-group :last-child {
+  border-right: none;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > input,
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > select {
+  width: 152px;
+  height: 30px;
+  padding: 0 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .filter-form > select {
+  width: 130px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table {
+  padding: 10px 15px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > thead {
+  background-color: #fafafa;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > thead > tr > th {
+  height: 50px;
+  border-top: none;
+  text-align: center;
+  font-weight: normal;
+  vertical-align: middle;
+  border-bottom: none;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody {
+  border-bottom: 1px solid #DFE0E4;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr {
+  background-color: #fff;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr:first-child > td {
+  border-top: none;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr:nth-child(2n) {
+  background-color: #fafafa;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr > td {
+  text-align: center;
+  vertical-align: middle;
+  border-top: 1px solid #DFE0E4;
+  height: 85px;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr > td .label-default {
+  background-color: #19AE88;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+.wrapper > .main-content > .main-right > .content-section > .content-bashboard > .content-table > .table > tbody > tr > td .dropdown-menu {
+  min-width: auto;
+}

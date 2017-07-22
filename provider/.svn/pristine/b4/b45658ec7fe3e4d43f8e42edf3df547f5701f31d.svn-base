@@ -1,0 +1,135 @@
+﻿
+#main-container { width:100%; min-width:1200px; margin-top:2px;height:auto;overflow:hidden;}
+.main-right { float:left; width:99%;}
+.main-right-container{
+    padding:2px 5px 20px; border:1px solid #ccc; border-top:none; border-radius:0px 0px 5px 5px;
+}
+
+#iframe-container{min-height:500px;}
+
+
+#header { width:100%; min-width:1200px; height:60px; background:url(/images/header/bg_header01.gif) repeat-x;}
+
+.logo { float:left; width:15%; height:50px; background:url(/images/header/login_logo.png) no-repeat;background-position:20px 10px; cursor:pointer;}
+
+.nav { float:left; width:85%; height:60px; color:#fff;  overflow: hidden}
+.nav a { color:#fff;}
+.nav a:hover { color:#fff; text-decoration:none;}
+.nav dl { float:left; width:60px; height:60px; background:url(/images/header/bg_nav01.gif) right bottom no-repeat; padding:0px 20px;}
+.nav dl dt { width:60px; margin-top:8px; color:#4474b2; height:20px;  text-align:center;}
+.nav dl dd { width:55px; height:20px; line-height:20px;  text-align:center; padding-top:7px;}
+.nav dl a { border:none;}
+.nav dl a:hover,.nav dl a.current { width:61px; height:51px;  background:url(/images/header/bg_nav02.png) no-repeat;  display:block; border:none;}
+.nav dl dt img{width:26px;height:26px;}
+#header .nav dl{
+    text-align: center;padding-top: 8px;
+}
+
+#sidebar { float:left; width:13%; min-width:120px; background:#e4effc; border-right:1px solid #bbd1eb;height:100%}
+#sidebar .menu .sub-menu{
+    cursor:pointer;
+}
+#menu-module dl dd{display:none;}
+.shrink { float:left; width:8px; height:225px;}
+.shrink_bg1 { float:left; width:8px; height:82px; margin-top:200px; background: url(/images/base/bg_shrink01.gif) no-repeat; cursor:pointer;}
+.shrink_bg2 { float:left; width:8px; height:82px; margin-top:200px; background:url(/images/base/bg_shrink02.gif) no-repeat; cursor:pointer;}
+
+/* 头部选项卡菜单样式  start**/
+.guild { border:1px solid #ccc; border-bottom:none; height:30px; background: url(/images/base/bg_guild01.gif) repeat-x; border-radius:5px 5px 0px 0px;}
+.guild h2 { float:left; height:29px; line-height:30px; font-size:12px; font-weight:bold; color:#0090e1; border-radius:5px 0px 0px 0px; background:#fff; padding:0px 20px; border-right:1px solid #ccc;}
+
+.guild_drop { float:left; width:20px; height:20px; margin:4px 0px 0px 10px;  cursor:pointer;}
+.guild_drop_up { float:left; width:20px; height:20px; margin:4px 0px 0px 10px; background: url(/images/pack/bg_guild_drop02.gif) right center no-repeat; cursor:pointer;}
+.guild_drop_list { position:absolute; width:150px; padding:2px; background:#fff; border:1px solid #78b1e8; border-radius:3px; box-shadow:0px 0px 2px #669ed5; z-index:10;}
+.guild_drop_list a {font-size: 11px; width:102px; height:20px; line-height:20px; text-align:left; padding:1px 3px; display:block; color:#666;}
+.guild_drop_list a:hover { background:#d9ebfc; height:20px;  display:block; color:#0090e1;}
+
+/**end**/
+
+
+.category { min-width:120px; height:30px; background:url(/images/sidebar/bg_category01.gif) repeat-x; padding: 0px 10px;}
+.category_down { width:5%; height:30px; float:left; background:url(/images/sidebar/bg_category02.gif) left 11px no-repeat; cursor:pointer;}
+.category_down a { width:10%; height:30px; display:block;}
+.category_down a:hover { width:10%; height:30px; display:block;background: url(/images/sidebar/bg_category03.gif) left 11px no-repeat; cursor:pointer;}
+.category_text { float:left; width:69%; height:30px; line-height:30px; padding:0px 10px; text-align:center;}
+.category_up { width: 5%; height:30px; float:right; text-align:right; background:url(/images/sidebar/bg_category04.gif) right 11px no-repeat; cursor:pointer;}
+
+.menu {height: 90%;overflow-y:auto;}
+.menu dl { background:url(/images/sidebar/bg_menu01.gif)  bottom repeat-x;}
+.menu dl dt { color:#4474b2; height:40px; line-height:40px; padding:0px 10px;}
+.menu dl dt img { padding-right:5px;width:22px;height:22px;}
+.menu dl dd { height:28px; line-height:28px; padding:0px 10px 0px 42px; background:#f4faff url(/images/sidebar/bg_menu02.gif) left no-repeat; background-position:30px 10px;}
+.menu dl dd a { color:#333;}
+.menu dl dd a.current { font-weight:bold;}
+
+.quit { background:url(/images/sidebar/bg_menu01.gif) top repeat-x; height:8%; text-align:center;}
+
+/**图标版菜单样式*/
+
+
+#sidebarIcon { float:left; width:55px;  background:#e4effc; border-right:1px solid #bbd1eb;height:100%}
+#sidebarIcon .menu .sub-menu{
+    cursor:pointer;
+}
+.category_downicon { width:45%; height:30px; float:left; background:url(/images/sidebar/bg_category02.gif) left 5px no-repeat; cursor:pointer;}
+.category_upicon { width: 45%; height:30px; float:right; text-align:right; background:url(/images/sidebar/bg_category04.gif) right 5px no-repeat; cursor:pointer;}
+
+.categoryicon { width:55px; height:30px; background:url(/images/sidebar/bg_category01.gif) repeat-x;}
+
+.menuicon {height: 90%;}
+.menuicon dl { background:url(/images/sidebar/bg_menu01.gif)  bottom repeat-x;}
+.menuicon dl dt { color:#4474b2; height:40px; line-height:40px;overflow:hidden }
+.menuicon dl dt img { padding-right:5px;padding-top: 5px;}
+.menuicon dl dt a { color:#4474b2; padding:0px 10px; display:block;}
+.menuicon dl dt a:hover {  color:#4474b2;  box-shadow:0px 0px 4px #7d96ba; background:#f9f9f9;}
+.menuicon dl dd { height:28px; line-height:28px; padding:0px 10px 0px 42px; background:#f4faff url(/images/sidebar/bg_menu02.gif) left no-repeat; background-position:30px 10px;}
+.menuicon dl dd a { color:#333;}
+.menuicon dl dd a.current { font-weight:bold;}
+.menuiconahover { height:38px; color:#4474b2; border:1px solid #7d96ba; box-shadow:0px 0px 4px #7d96ba; background:#f9f9f9;}
+
+.menuiconquit { background:url(/images/sidebar/bg_menu01.gif) top repeat-x; height:8%; text-align:center;padding-bottom: 1px}
+
+.submenu { position:absolute; width:240px; padding:5px; background:#f9f9f9; border:1px solid #7d96ba;  border-radius:5px; box-shadow:0px 0px 4px #7d96ba; margin-left:48px; margin-top:-40px;display: none;}
+.submenu ul { width:240px; height:27px; line-height:26px; border-bottom:1px solid #eee; }
+.submenu ul.noline { border-bottom:none;}
+.submenu ul li { float:left; width:100px; padding:0px 10px; background:url(/images/sidebar/bg_submenu01.gif) right no-repeat;}
+.submenu ul li.noline { background:none;}
+.submenu ul li a { color:#333;}
+.submenu ul li a:hover { display:block; color:#0090e1!important; color:#0090e1;}
+.submenu_cover { position:absolute; width:9px; height:38px; background:#f9f9f9; z-index:50; margin-left:-10px; margin-top:-5px;}
+
+/**表格样式-适用于各详情页面 START**/
+
+
+/**end**/
+
+
+
+
+
+/* ----------- 类似股票的样式 ------------- */
+.manage_form5 { background:#000; border:1px solid #555; margin-top:5px; font-size:18px;}
+.manage_form5 tr {  }
+.manage_form5 td { line-height:20px; padding:5px; border-right:1px solid #555; border-bottom:1px solid #555;}
+.manage_form5,.manage_form5 td{  }
+.manage_form5_bk { background:#000; color:#e7f09f; }
+.manage_form5_bk2 { background:#000; color:#1cd41a;}
+.manage_form5_bk3 { background:#555; color:#1cd41a;}
+
+.goodsTab2 { height:28px; background: url(/images/pack/bg_goodsTab01.gif) bottom repeat-x; padding-top:12px; font-size:18px;}
+.goodsTab2 ul {}
+.goodsTab2 ul li { float:left; background:#fef4ea;  line-height:28px; border-left:1px solid #96946d; border-right:1px solid #96946d; padding:0px 15px; margin-right:5px; color:#000;}
+.goodsTab2 ul li.chooseTag { background:#000; float:left; padding:0px 15px; z-index:5; color:#999b9a;  }
+.goodsTab2 li.chooseTag a { color:#999b9a;}
+.goodsTab2 a { color:#000;}
+.goodsTab2 a:hover { color:#488fcd; text-decoration:none;}
+/* ----------- end ------------- */
+
+
+/* --- 面包屑 --- */
+.breadnav { height:30px; padding-top:5px; }
+
+.guild { border:1px solid #ccc; border-bottom:none; height:30px; background: url(/images/base/bg_guild01.gif) repeat-x; border-radius:5px 5px 0px 0px;}
+.guild h2 { float:left; height:29px; line-height:29px; font-size:12px; font-weight:bold; color:#0090e1; border-radius:5px 0px 0px 0px; background:#fff; padding:0px 20px; border-right:1px solid #ccc;}
+
+.search { padding-bottom:10px; background: url(/images/pack/bg_search01.gif) bottom repeat-x ; }

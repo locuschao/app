@@ -1,0 +1,49 @@
+@MEDIA all {
+	html {
+		color: #000;
+		background: #FFF;
+	}
+	body {
+		font-family: Tahoma, Arial, 'Times New Roman', '微软雅黑', 'Arial Unicode MS';
+		font-size: 14px;
+		line-height: 1.3;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	div,span {
+		word-wrap: break-word;
+/* 		word-break: break-all; */
+	}
+	button,select,textarea {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+	a {
+		color: #428bca;
+		text-decoration: none;
+	}
+	a:hover,a:focus {
+		color: #2a6496;
+		text-decoration: underline;
+	}
+	a:focus {
+		outline: thin dotted;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+	.fpx-clear:before {
+		display: table;
+		content: " ";
+	}
+	.fpx-label-clear {
+		clear: both;
+	}
+}
+@MEDIA print {
+	.fpx-noprint {
+		display: none;
+	}
+}

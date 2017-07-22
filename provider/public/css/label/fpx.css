@@ -1,0 +1,41 @@
+@media screen {
+	.fpx-print-page {
+		width: 972px;
+		margin: 0 auto;
+		padding: 10px;
+	}
+	.fpx-print-option-div {
+		overflow: hidden;
+		background-color: #F5F4F4;
+		margin-bottom: 10px;
+	}
+	.fpx-print-tip {
+		color: red;
+	}
+	.fpx-label-input-label {
+		padding: 0 10px 0 0;
+	}
+	.fpx-label-img-print-a {
+		margin-right: 20px;
+	}
+	.fpx-label-prompt {
+		font-size: 16px;
+		text-align: center;
+		padding-left: 10px;
+		color: green;
+		display: none;
+	}
+	.fpx-label-print-advanced {
+/* 		text-align: center; */
+	}
+	.fpx-label-print-a {
+		display: none;
+		color: red;
+	}
+}
+
+@media print {
+	.fpx-noprint {
+		display: none;
+	}
+}
